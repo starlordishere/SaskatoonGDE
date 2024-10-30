@@ -1,5 +1,7 @@
 /* Custom styles to complement Bootstrap */
 :root[data-bs-theme=dark] {
+    --bs-primary: #dc3545;
+    --bs-primary-rgb: 220, 53, 69;
     --primary-color: var(--bs-primary);
     --text-color: var(--bs-light);
     --bg-color: var(--bs-dark);
@@ -57,7 +59,8 @@
 
 .service-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 20px rgba(220, 53, 69, 0.15);
+    border-color: var(--bs-primary);
 }
 
 .service-card img {
@@ -76,6 +79,7 @@
 
 .blog-card:hover {
     transform: translateY(-5px);
+    border-color: var(--bs-primary);
 }
 
 .blog-card .card-img-top {
@@ -115,6 +119,13 @@
     border-radius: 8px;
     padding: 20px;
     margin: 15px 0;
+    border: 1px solid var(--bs-border-color);
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    border-color: var(--bs-primary);
+    transform: translateY(-3px);
 }
 
 .testimonial-card img {
@@ -129,14 +140,26 @@
     background: var(--card-bg);
     border-radius: 8px;
     transition: transform 0.3s ease;
+    border: 1px solid var(--bs-border-color);
 }
 
 .pricing-card:hover {
     transform: translateY(-5px);
+    border-color: var(--bs-primary);
 }
 
 .pricing-card.featured {
-    border: 2px solid var(--primary-color);
+    border: 2px solid var(--bs-primary);
+    box-shadow: 0 0 20px rgba(220, 53, 69, 0.2);
+}
+
+/* Navigation */
+.navbar-nav .nav-link.active {
+    color: var(--bs-primary) !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--bs-primary) !important;
 }
 
 /* Gallery */
@@ -171,6 +194,16 @@
 
 .gallery-item:hover .gallery-overlay {
     opacity: 1;
+}
+
+/* Chat Button */
+.btn-primary {
+    border-width: 2px;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.2);
 }
 
 /* Mobile responsiveness */
