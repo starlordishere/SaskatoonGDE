@@ -1,130 +1,176 @@
 from app import app, db
 from models import BlogPost
 
-# Sample blog posts data
 posts = [
     {
-        "title": "Essential Garage Door Maintenance Tips for Winter",
-        "slug": "winter-maintenance-tips",
-        "summary": "Keep your garage door working smoothly during the cold Saskatoon winters with these essential maintenance tips.",
+        "title": "Understanding Garage Door Springs: A Complete Guide",
+        "slug": "garage-door-springs-guide",
+        "summary": "Learn everything about garage door springs, their importance, and when they need replacement.",
         "content": """
-<h2>Winter Garage Door Maintenance Guide</h2>
+<h2>The Importance of Garage Door Springs</h2>
 
-<p>As winter approaches in Saskatoon, it's crucial to prepare your garage door for the harsh weather. Here are some essential maintenance tips:</p>
+<p>Garage door springs are an essential component of your garage door system, responsible for safe and proper lifting and lowering of the door. Torsion springs, located above the garage door on a metal shaft, work by storing mechanical energy when the door is closed through twisting, and releasing this energy to help lift the door when opening.</p>
 
-<h3>1. Lubricate Moving Parts</h3>
-<p>Apply a silicone-based lubricant to all moving parts including:</p>
+<div class="alert alert-danger">
+<strong>Safety Warning:</strong> Never attempt to fix garage door springs yourself. Due to the high tension in the springs, spring repairs should only be handled by professional technicians to avoid dangerous hazards. Springs have the most tension when the door is lowered.
+</div>
+
+<h3>Types of Spring Systems</h3>
 <ul>
-    <li>Hinges</li>
-    <li>Rollers</li>
-    <li>Springs</li>
-    <li>Tracks</li>
+    <li><strong>Torsion Springs:</strong> Located above the door, visible and easier to inspect</li>
+    <li><strong>Wayne Dalton System:</strong> Springs located inside a hollow tube, making inspection more difficult</li>
 </ul>
 
-<h3>2. Check Weather Stripping</h3>
-<p>Inspect and replace damaged weather stripping to prevent cold air and snow from entering your garage.</p>
+<h3>Warning Signs for Replacement</h3>
+<p>Watch for these critical signs that indicate your springs need professional attention:</p>
+<ul>
+    <li>Door becomes unusually heavy and difficult to open manually</li>
+    <li>Door opens partially or very slowly</li>
+    <li>Door drops quickly when partially lifted</li>
+    <li>Springs show visible rust or corrosion</li>
+    <li>Loud bang sounds due to springs unwinding quickly</li>
+</ul>
 
-<h3>3. Test Auto-Reverse Feature</h3>
-<p>Ensure your door's safety features are working properly by testing the auto-reverse mechanism.</p>
+<h3>Factors Affecting Spring Lifespan</h3>
+<ul>
+    <li>Regular wear and tear</li>
+    <li>Rust and corrosion</li>
+    <li>Incorrect maintenance</li>
+    <li>Environmental conditions</li>
+</ul>
+
+<div class="alert alert-info">
+<strong>Professional Tip:</strong> Annual maintenance by trained professionals can help identify spring issues early and prevent costly repairs or accidents.
+</div>
 """,
-        "image_url": "https://placehold.co/600x400?text=Winter+Maintenance"
+        "image_url": "https://placehold.co/600x400?text=Garage+Springs"
     },
     {
-        "title": "Signs Your Garage Door Springs Need Replacement",
-        "slug": "garage-door-springs-replacement",
-        "summary": "Learn to recognize the warning signs that indicate your garage door springs need professional attention.",
+        "title": "Essential Guide to Garage Door Cables",
+        "slug": "garage-door-cables-guide",
+        "summary": "Understanding garage door cables, their importance, and common issues.",
         "content": """
-<h2>Warning Signs for Spring Replacement</h2>
+<h2>Understanding Garage Door Cables</h2>
 
-<p>Garage door springs are crucial components that need regular inspection. Here are signs that indicate replacement is needed:</p>
+<p>Garage door cables are crucial components made from strong, twisted steel wire for durability and strength. Working with cable drums on either side of the door, they maintain even tension, ensuring proper and safe operation of your garage door.</p>
 
-<h3>1. Unusual Noises</h3>
-<p>If you hear squeaking, creaking, or popping sounds when operating your door, the springs might be wearing out.</p>
-
-<h3>2. Door Imbalance</h3>
-<p>A properly balanced door should stay in place when manually lifted halfway. If it doesn't, the springs might need adjustment or replacement.</p>
-
-<h3>3. Visible Wear and Tear</h3>
-<p>Look for signs of:</p>
+<h3>Critical Warning Signs</h3>
 <ul>
-    <li>Rust</li>
-    <li>Gaps in the springs</li>
-    <li>Stretched springs</li>
+    <li><strong>Fraying or Rust:</strong> Signs of wear that can lead to cable failure</li>
+    <li><strong>Slack in Cables:</strong> Causing door imbalance and improper operation</li>
+    <li><strong>Uneven Movement:</strong> Door shaking or moving too fast</li>
+    <li><strong>Misalignment:</strong> Door not opening or closing properly</li>
 </ul>
+
+<div class="alert alert-danger">
+<strong>Safety Warning:</strong> Cables are under high tension and can cause serious injury if not handled properly. Never attempt to replace or repair cables on your own - always contact professional technicians.
+</div>
+
+<h3>Importance of Timely Repairs</h3>
+<p>Damaged cables should be replaced immediately to:</p>
+<ul>
+    <li>Ensure family safety</li>
+    <li>Prevent further damage</li>
+    <li>Maintain proper door operation</li>
+    <li>Avoid costly emergency repairs</li>
+</ul>
+
+<div class="alert alert-info">
+<strong>Maintenance Tip:</strong> Regular professional inspections can identify cable issues before they become serious problems.
+</div>
 """,
-        "image_url": "https://placehold.co/600x400?text=Spring+Maintenance"
+        "image_url": "https://placehold.co/600x400?text=Door+Cables"
     },
     {
-        "title": "Choosing the Right Garage Door Opener",
-        "slug": "choosing-garage-door-opener",
-        "summary": "A comprehensive guide to selecting the perfect garage door opener for your needs.",
+        "title": "Weather Sealing and Protection Guide",
+        "slug": "weather-sealing-guide",
+        "summary": "Learn about the importance of proper weather sealing for your garage door.",
         "content": """
-<h2>Guide to Garage Door Openers</h2>
+<h2>Weather Sealing Your Garage Door</h2>
 
-<p>Choosing the right garage door opener can significantly impact your daily convenience and security. Here's what to consider:</p>
+<p>The weatherstripping bottom seal is crucial for protecting your garage from external elements. It creates an effective barrier between your garage door and the floor, preventing various issues.</p>
 
-<h3>1. Drive Types</h3>
+<h3>Functions of Weather Sealing</h3>
 <ul>
-    <li><strong>Belt Drive:</strong> Quietest option, ideal for attached garages</li>
-    <li><strong>Chain Drive:</strong> Most economical and durable</li>
-    <li><strong>Screw Drive:</strong> Low maintenance with fewer moving parts</li>
+    <li>Keeps out drafts, water, and dirt</li>
+    <li>Prevents pest intrusion</li>
+    <li>Maintains garage insulation</li>
+    <li>Protects against seasonal weather</li>
 </ul>
 
-<h3>2. Smart Features</h3>
-<p>Modern openers offer various smart features:</p>
+<h3>Signs of Seal Deterioration</h3>
 <ul>
-    <li>Smartphone control</li>
-    <li>Built-in camera</li>
-    <li>Battery backup</li>
-    <li>WiFi connectivity</li>
+    <li><strong>Visible Damage:</strong> Worn, cracked, or broken seals</li>
+    <li><strong>Operational Issues:</strong> Difficulty in door closure</li>
+    <li><strong>Environmental Problems:</strong> Draft, water leaks, or pest intrusion</li>
+    <li><strong>Seasonal Issues:</strong> Poor insulation during extreme weather</li>
 </ul>
 
-<h3>3. Security Features</h3>
-<p>Look for these essential security features:</p>
+<div class="alert alert-info">
+<strong>Benefits of Replacement:</strong>
 <ul>
-    <li>Rolling code technology</li>
-    <li>Vacation mode</li>
-    <li>Manual release</li>
+    <li>Improved energy efficiency</li>
+    <li>Better protection against elements</li>
+    <li>Enhanced pest control</li>
+    <li>Extended garage door life</li>
+</ul>
+</div>
+
+<h3>Professional Installation</h3>
+<p>While seal replacement might seem simple, professional installation ensures:</p>
+<ul>
+    <li>Proper seal selection and fitting</li>
+    <li>Correct installation technique</li>
+    <li>Maximum effectiveness</li>
+    <li>Long-lasting results</li>
 </ul>
 """,
-        "image_url": "https://placehold.co/600x400?text=Garage+Openers"
+        "image_url": "https://placehold.co/600x400?text=Weather+Sealing"
     },
     {
-        "title": "DIY Garage Door Maintenance Checklist",
-        "slug": "diy-maintenance-checklist",
-        "summary": "Monthly maintenance tasks you can perform to keep your garage door in top condition.",
+        "title": "WD to Torsion Spring System Conversion Benefits",
+        "slug": "system-conversion-guide",
+        "summary": "Understanding the advantages of converting from Wayne Dalton to Torsion Spring system.",
         "content": """
-<h2>Monthly Maintenance Checklist</h2>
+<h2>System Conversion Benefits</h2>
 
-<p>Regular maintenance can prevent costly repairs and extend your garage door's life. Here's your monthly checklist:</p>
+<p>Converting from a Wayne Dalton system to a Torsion Spring system offers several significant advantages for homeowners. This comprehensive upgrade improves both safety and functionality.</p>
 
-<h3>1. Visual Inspection</h3>
+<h3>Advantages of Torsion Spring System</h3>
 <ul>
-    <li>Check cables for fraying</li>
-    <li>Look for loose hardware</li>
-    <li>Inspect rollers for damage</li>
-    <li>Check track alignment</li>
+    <li>Visible spring condition monitoring</li>
+    <li>Enhanced safety features</li>
+    <li>Improved durability</li>
+    <li>Better balance and operation</li>
+    <li>Extended opener lifespan</li>
 </ul>
 
-<h3>2. Testing</h3>
+<h3>Conversion Process</h3>
+<p>Professional conversion includes:</p>
 <ul>
-    <li>Test the auto-reverse feature</li>
-    <li>Check the manual release</li>
-    <li>Listen for unusual sounds</li>
-</ul>
-
-<h3>3. Cleaning and Lubrication</h3>
-<ul>
-    <li>Clean tracks and rollers</li>
-    <li>Wipe down weather stripping</li>
-    <li>Apply lubricant to moving parts</li>
+    <li>Installation of new cable drums</li>
+    <li>Shaft installation</li>
+    <li>Shaft anchor mounting</li>
+    <li>Torsion spring setup</li>
 </ul>
 
 <div class="alert alert-warning">
-<strong>Safety First!</strong> Always call a professional for spring adjustments and major repairs.
+<strong>Important Note:</strong> Wayne Dalton systems hide springs inside a hollow tube, making it impossible to visually inspect for damage. This can lead to unexpected failures and potentially costly repairs.
+</div>
+
+<h3>Long-term Benefits</h3>
+<ul>
+    <li>Easier maintenance and inspection</li>
+    <li>More reliable operation</li>
+    <li>Reduced risk of sudden failure</li>
+    <li>Better overall door performance</li>
+</ul>
+
+<div class="alert alert-info">
+<strong>Professional Recommendation:</strong> Converting to a torsion spring system is a worthwhile investment that can prevent costly repairs and extend the life of your garage door system.
 </div>
 """,
-        "image_url": "https://placehold.co/600x400?text=DIY+Maintenance"
+        "image_url": "https://placehold.co/600x400?text=System+Conversion"
     }
 ]
 

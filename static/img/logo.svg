@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 60" fill="currentColor">
-  <path d="M20,45 h260 v-30 h-260 z" stroke="currentColor" stroke-width="2" fill="none"/>
-  <path d="M40,15 l110,5 l110,-5 v-5 l-110,5 l-110,-5 z" stroke="currentColor" stroke-width="2" fill="none"/>
-  <text x="40" y="35" font-family="Arial" font-size="16" fill="currentColor" font-weight="bold">Saskatoon Garage Doors</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 60" fill="currentColor">
+  <path d="M20,45 h360 v-30 h-360 z" stroke="currentColor" stroke-width="2" fill="none"/>
+  <path d="M40,15 l160,5 l160,-5 v-5 l-160,5 l-160,-5 z" stroke="currentColor" stroke-width="2" fill="none"/>
+  <text x="40" y="35" font-family="Arial" font-size="16" fill="currentColor" font-weight="bold">Saskatoon Garage Door Experts</text>
 </svg>
