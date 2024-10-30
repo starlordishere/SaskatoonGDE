@@ -11,4 +11,5 @@ dependencies = [
     "eventlet>=0.37.0",
     "flask-socketio>=5.4.1",
     "python-socketio",
+    "flask-mail>=0.10.0",
 ]

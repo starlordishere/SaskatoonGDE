@@ -5,6 +5,7 @@ from sqlalchemy.orm import DeclarativeBase
 from datetime import datetime
 from werkzeug.utils import secure_filename
 from flask_socketio import SocketIO, emit
+from flask_mail import Mail, Message
 
 class Base(DeclarativeBase):
     pass
@@ -18,8 +19,18 @@ app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
     "pool_recycle": 300,
     "pool_pre_ping": True,
 }
+
+# Mail configuration
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
+app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
+app.config['MAIL_DEFAULT_SENDER'] = os.environ.get('MAIL_USERNAME')
+
 db.init_app(app)
 socketio = SocketIO(app)
+mail = Mail(app)
 
 @app.route('/')
 def index():
@@ -54,8 +65,49 @@ def contact():
         )
         
         try:
+            # Save to database
             db.session.add(new_inquiry)
             db.session.commit()
+
+            # Send email notification
+            msg = Message(
+                'New Contact Form Submission',
+                recipients=[app.config['MAIL_USERNAME']]
+            )
+            msg.body = f"""
+New contact form submission received:
+
+Name: {name}
+Email: {email}
+Phone: {phone}
+Service Type: {service_type}
+Message:
+{message}
+
+Submitted at: {datetime.utcnow()}
+"""
+            mail.send(msg)
+
+            # Send confirmation email to customer
+            customer_msg = Message(
+                'Thank you for contacting Saskatoon Garage Door Experts',
+                recipients=[email]
+            )
+            customer_msg.body = f"""
+Dear {name},
+
+Thank you for contacting Saskatoon Garage Door Experts. We have received your inquiry about {service_type} service.
+
+We will review your request and get back to you shortly.
+
+Your message:
+{message}
+
+Best regards,
+Saskatoon Garage Door Experts Team
+"""
+            mail.send(customer_msg)
+
             flash('Thank you for your inquiry! We will contact you soon.', 'success')
             return redirect(url_for('contact'))
         except Exception as e:
