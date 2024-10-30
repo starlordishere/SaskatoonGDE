@@ -53,6 +53,78 @@ posts = [
 </ul>
 """,
         "image_url": "https://placehold.co/600x400?text=Spring+Maintenance"
+    },
+    {
+        "title": "Choosing the Right Garage Door Opener",
+        "slug": "choosing-garage-door-opener",
+        "summary": "A comprehensive guide to selecting the perfect garage door opener for your needs.",
+        "content": """
+<h2>Guide to Garage Door Openers</h2>
+
+<p>Choosing the right garage door opener can significantly impact your daily convenience and security. Here's what to consider:</p>
+
+<h3>1. Drive Types</h3>
+<ul>
+    <li><strong>Belt Drive:</strong> Quietest option, ideal for attached garages</li>
+    <li><strong>Chain Drive:</strong> Most economical and durable</li>
+    <li><strong>Screw Drive:</strong> Low maintenance with fewer moving parts</li>
+</ul>
+
+<h3>2. Smart Features</h3>
+<p>Modern openers offer various smart features:</p>
+<ul>
+    <li>Smartphone control</li>
+    <li>Built-in camera</li>
+    <li>Battery backup</li>
+    <li>WiFi connectivity</li>
+</ul>
+
+<h3>3. Security Features</h3>
+<p>Look for these essential security features:</p>
+<ul>
+    <li>Rolling code technology</li>
+    <li>Vacation mode</li>
+    <li>Manual release</li>
+</ul>
+""",
+        "image_url": "https://placehold.co/600x400?text=Garage+Openers"
+    },
+    {
+        "title": "DIY Garage Door Maintenance Checklist",
+        "slug": "diy-maintenance-checklist",
+        "summary": "Monthly maintenance tasks you can perform to keep your garage door in top condition.",
+        "content": """
+<h2>Monthly Maintenance Checklist</h2>
+
+<p>Regular maintenance can prevent costly repairs and extend your garage door's life. Here's your monthly checklist:</p>
+
+<h3>1. Visual Inspection</h3>
+<ul>
+    <li>Check cables for fraying</li>
+    <li>Look for loose hardware</li>
+    <li>Inspect rollers for damage</li>
+    <li>Check track alignment</li>
+</ul>
+
+<h3>2. Testing</h3>
+<ul>
+    <li>Test the auto-reverse feature</li>
+    <li>Check the manual release</li>
+    <li>Listen for unusual sounds</li>
+</ul>
+
+<h3>3. Cleaning and Lubrication</h3>
+<ul>
+    <li>Clean tracks and rollers</li>
+    <li>Wipe down weather stripping</li>
+    <li>Apply lubricant to moving parts</li>
+</ul>
+
+<div class="alert alert-warning">
+<strong>Safety First!</strong> Always call a professional for spring adjustments and major repairs.
+</div>
+""",
+        "image_url": "https://placehold.co/600x400?text=DIY+Maintenance"
     }
 ]
 

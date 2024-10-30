@@ -68,6 +68,47 @@
     transform: scale(1.1);
 }
 
+/* Blog styles */
+.blog-card {
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+}
+
+.blog-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.blog-content {
+    line-height: 1.8;
+}
+
+.blog-content h2 {
+    color: var(--bs-primary);
+    margin: 2rem 0 1rem;
+}
+
+.blog-content h3 {
+    color: var(--bs-info);
+    margin: 1.5rem 0 1rem;
+}
+
+.blog-content ul {
+    margin-bottom: 1.5rem;
+}
+
+.blog-content li {
+    margin-bottom: 0.5rem;
+}
+
+.blog-content .alert {
+    margin: 2rem 0;
+}
+
 /* Testimonials */
 .testimonial-card {
     background: var(--card-bg);
