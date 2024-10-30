@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Customer Support Chat</h5>
+                </div>
+                <div class="card-body chat-container" style="height: 400px; overflow-y: auto;" id="chat-messages">
+                    <div class="text-center text-muted mb-3">
+                        <small>Start chatting with our customer support team</small>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <form id="chat-form" class="d-flex gap-2">
+                        <input type="text" class="form-control" id="message-input" placeholder="Type your message..." required>
+                        <button type="submit" class="btn btn-primary">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const socket = io();
+        const chatForm = document.getElementById('chat-form');
+        const messageInput = document.getElementById('message-input');
+        const chatMessages = document.getElementById('chat-messages');
+
+        // Handle form submission
+        chatForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const message = messageInput.value.trim();
+            if (message) {
+                socket.emit('send_message', {message: message});
+                messageInput.value = '';
+            }
+        });
+
+        // Handle incoming messages
+        socket.on('receive_message', function(data) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `mb-3 ${data.is_support ? 'text-end' : ''}`;
+            
+            const messageBubble = document.createElement('div');
+            messageBubble.className = `d-inline-block p-2 rounded-3 ${data.is_support ? 'bg-primary text-white' : 'bg-light'}`;
+            messageBubble.style.maxWidth = '75%';
+            messageBubble.textContent = data.message;
+            
+            messageDiv.appendChild(messageBubble);
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        });
+    });
+</script>
+{% endblock %}
