@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-5">
+    <article>
+        <header class="mb-4">
+            <h1>{{ post.title }}</h1>
+            <div class="text-muted">
+                Published on {{ post.created_at.strftime('%B %d, %Y') }}
+                {% if post.updated_at != post.created_at %}
+                | Updated on {{ post.updated_at.strftime('%B %d, %Y') }}
+                {% endif %}
+            </div>
+        </header>
+
+        {% if post.image_url %}
+        <img src="{{ post.image_url }}" class="img-fluid rounded mb-4" alt="{{ post.title }}">
+        {% endif %}
+
+        <div class="blog-content">
+            {{ post.content | safe }}
+        </div>
+
+        <div class="mt-5">
+            <a href="{{ url_for('blog') }}" class="btn btn-outline-primary">
+                <i data-feather="arrow-left" class="me-2"></i>Back to Blog
+            </a>
+        </div>
+    </article>
+</div>
+{% endblock %}

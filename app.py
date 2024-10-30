@@ -1,8 +1,9 @@
 import os
-from flask import Flask, render_template, request, flash, redirect, url_for
+from flask import Flask, render_template, request, flash, redirect, url_for, abort
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase
 from datetime import datetime
+from werkzeug.utils import secure_filename
 
 class Base(DeclarativeBase):
     pass
@@ -59,6 +60,18 @@ def contact():
             flash('An error occurred. Please try again.', 'error')
             
     return render_template('contact.html')
+
+@app.route('/blog')
+def blog():
+    from models import BlogPost
+    posts = BlogPost.query.order_by(BlogPost.created_at.desc()).all()
+    return render_template('blog/index.html', posts=posts)
+
+@app.route('/blog/<string:slug>')
+def blog_post(slug):
+    from models import BlogPost
+    post = BlogPost.query.filter_by(slug=slug).first_or_404()
+    return render_template('blog/post.html', post=post)
 
 with app.app_context():
     import models
