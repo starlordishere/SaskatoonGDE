@@ -1,43 +1,168 @@
 /* Custom styles to complement Bootstrap */
+:root[data-bs-theme=dark] {
+    --primary-color: var(--bs-primary);
+    --text-color: var(--bs-light);
+    --bg-color: var(--bs-dark);
+    --card-bg: var(--bs-dark-bg-subtle);
+}
+
+/* Hero section */
 .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
                 url('../img/hero-bg.svg') no-repeat center center;
     background-size: cover;
-    color: white;
+    color: var(--text-color);
     padding: 100px 0;
+    position: relative;
+    overflow: hidden;
 }
 
-.min-vh-75 {
-    min-height: 75vh;
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: linear-gradient(transparent, var(--bg-color));
 }
 
-.card {
+/* Animations */
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.hero h1, .hero p {
+    animation: slideUp 1s ease forwards;
+}
+
+.hero .btn {
+    animation: fadeIn 1.5s ease forwards;
+}
+
+/* Service Cards */
+.service-card {
+    background: var(--card-bg);
+    border: 1px solid var(--bs-border-color);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-card img {
     transition: transform 0.3s ease;
 }
 
-.card:hover {
+.service-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Testimonials */
+.testimonial-card {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 15px 0;
+}
+
+.testimonial-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+/* Pricing Section */
+.pricing-card {
+    background: var(--card-bg);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.pricing-card:hover {
     transform: translateY(-5px);
 }
 
-.service-icon {
-    width: 64px;
-    height: 64px;
-    margin-bottom: 1rem;
+.pricing-card.featured {
+    border: 2px solid var(--primary-color);
 }
 
-/* Custom form styles */
-.form-control:focus {
-    border-color: var(--bs-primary);
-    box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+/* Gallery */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
-/* Mobile responsiveness adjustments */
+.gallery-item img {
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+/* Mobile responsiveness */
 @media (max-width: 768px) {
     .hero {
         padding: 50px 0;
+        text-align: center;
     }
     
     .min-vh-75 {
         min-height: 50vh;
     }
+    
+    .service-card {
+        margin-bottom: 20px;
+    }
+    
+    .pricing-card {
+        margin-bottom: 20px;
+    }
+    
+    .gallery-item {
+        margin-bottom: 20px;
+    }
+}
+
+/* Accessibility improvements */
+.btn:focus, .form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+}
+
+/* High contrast text */
+.text-contrast {
+    color: var(--bs-light);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
