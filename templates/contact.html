@@ -7,6 +7,11 @@
             <h2>Contact Us</h2>
             <p class="lead">Get in touch with us for all your garage door needs. Call or text us for a free quote and additional information.</p>
             
+            <div class="alert alert-success mb-4">
+                <i data-feather="info" class="me-2"></i>
+                Free assessment ($35 value) included with any service booking!
+            </div>
+            
             <form method="POST" action="{{ url_for('contact') }}" class="needs-validation" novalidate>
                 <div class="mb-3">
                     <label for="name" class="form-label">Full Name</label>
@@ -27,17 +32,18 @@
                     <label for="service_type" class="form-label">Service Type</label>
                     <select class="form-select" id="service_type" name="service_type" required>
                         <option value="">Select a service...</option>
-                        <option value="assessment">Service Call + Assessment ($35)</option>
-                        <option value="spring">Spring Replacement ($250-$420)</option>
-                        <option value="cable">Cable Repair ($300-$400)</option>
-                        <option value="seal">Retainer and Rubber Seal ($180-$220)</option>
-                        <option value="programming">Remote/Keypad Programming ($100-$150)</option>
-                        <option value="maintenance">Maintenance and Inspection ($100-$120)</option>
-                        <option value="conversion">WD to Spring System Conversion ($500)</option>
-                        <option value="track">Track Repair</option>
-                        <option value="roller">Roller Replacement</option>
-                        <option value="emergency">Emergency Service</option>
+                        <option value="assessment">Service Call + Assessment ($35) - Free with any service</option>
+                        <option value="spring">Spring Replacement ($250-$420 + tax)</option>
+                        <option value="cable">Cable Repair ($300-$400 + tax)</option>
+                        <option value="seal">Retainer and Rubber Seal ($180-$220 + tax)</option>
+                        <option value="programming">Remote/Keypad Programming ($100-$150 + tax)</option>
+                        <option value="maintenance">Maintenance and Inspection ($100-$120 + tax)</option>
+                        <option value="conversion">WD to Spring System Conversion ($500 + tax)</option>
+                        <option value="track">Track Repair (Free assessment required)</option>
+                        <option value="roller">Roller Replacement (Free assessment required)</option>
+                        <option value="emergency">Emergency Service (Call for pricing)</option>
                     </select>
+                    <div class="form-text">All prices subject to applicable PST/GST. Free assessment included with service.</div>
                 </div>
                 
                 <div class="mb-3">
@@ -67,6 +73,11 @@
                             <a href="mailto:gdexperts111@gmail.com" class="text-decoration-none">gdexperts111@gmail.com</a>
                         </li>
                     </ul>
+                    
+                    <div class="alert alert-info mt-4">
+                        <h5 class="alert-heading">Free Assessment Offer!</h5>
+                        <p class="mb-0">Book any service and receive a comprehensive garage door assessment (valued at $35) completely free. Our expert technicians will thoroughly inspect your system and provide detailed recommendations.</p>
+                    </div>
                     
                     <h5 class="mt-4">Available Services</h5>
                     <p>Our skilled and professional experts provide quality services with attention to detail:</p>
