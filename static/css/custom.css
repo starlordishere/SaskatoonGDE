@@ -10,8 +10,7 @@
 
 /* Hero section */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                url('../img/hero-bg.svg') no-repeat center center;
+    background: url('../img/hero-bg.svg') no-repeat center center;
     background-size: cover;
     color: var(--text-color);
     padding: 100px 0;
@@ -19,14 +18,9 @@
     overflow: hidden;
 }
 
+/* Remove hero overlay for better text clarity */
 .hero::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 50px;
-    background: linear-gradient(transparent, var(--bg-color));
+    content: none;
 }
 
 /* Animations */
@@ -238,5 +232,5 @@
 /* High contrast text */
 .text-contrast {
     color: var(--bs-light);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    /* Removed text-shadow for better clarity */
 }
