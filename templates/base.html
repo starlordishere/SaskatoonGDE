@@ -7,8 +7,10 @@
     <title>{% block title %}Saskatoon Garage Door Experts{% endblock %}</title>
     <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
-    <!-- Load Feather icons at the beginning -->
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <!-- Load scripts in proper order with defer -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://unpkg.com/feather-icons" defer></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -69,8 +71,8 @@
                 <div class="col-md-4">
                     <h5>Contact Us</h5>
                     <p>
-                        <i data-feather="phone"></i> Emergency: (306) 555-0123<br>
-                        <i data-feather="mail"></i> info@saskatoongaragedoors.ca
+                        <i data-feather="phone"></i> (474) 774-0269<br>
+                        <i data-feather="mail"></i> gdexperts111@gmail.com
                     </p>
                 </div>
                 <div class="col-md-4">
@@ -89,9 +91,6 @@
         </div>
     </footer>
 
-    <!-- Load scripts in proper order -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     {% block extra_js %}{% endblock %}
 </body>
 </html>
