@@ -6,7 +6,7 @@
         <div class="row align-items-center min-vh-50">
             <div class="col-lg-8">
                 <h1 class="display-4 fw-bold text-contrast">Our Garage Door Services</h1>
-                <p class="lead text-contrast">Professional solutions for all your garage door needs in Saskatoon.</p>
+                <p class="lead text-contrast">Professional solutions for all your garage door needs in Saskatoon. Our skilled and professional experts provide quality services with attention to detail.</p>
             </div>
         </div>
     </div>
@@ -25,7 +25,7 @@
             </div>
             <div class="col-lg-8">
                 <h2>Service Call + Assessment</h2>
-                <p class="lead">Professional evaluation of your garage door system.</p>
+                <p class="lead">Professional evaluation of your garage door system at a fixed price.</p>
                 <div class="service-features mb-4">
                     <div class="row g-3">
                         <div class="col-md-6">
@@ -58,6 +58,49 @@
             </div>
         </div>
 
+        <!-- Retainer and Rubber Seal -->
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-4 text-center mb-4 mb-lg-0">
+                <img src="{{ url_for('static', filename='img/services/repair.svg') }}" alt="Retainer and Seal" class="img-fluid mb-3" width="150">
+                <div class="pricing-tag">
+                    <span class="display-6">$180-$220</span>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <h2>Retainer and Rubber Seal</h2>
+                <p class="lead">Professional seal replacement to maintain your garage door's efficiency.</p>
+                <div class="service-features mb-4">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i data-feather="check" class="text-success me-2"></i>
+                                <span>Weather protection</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i data-feather="check" class="text-success me-2"></i>
+                                <span>Energy efficiency</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i data-feather="check" class="text-success me-2"></i>
+                                <span>Professional installation</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i data-feather="check" class="text-success me-2"></i>
+                                <span>Quality materials</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="{{ url_for('contact') }}?service=seal" class="btn btn-primary">Schedule Service</a>
+            </div>
+        </div>
+
         <!-- Spring Replacement -->
         <div class="row align-items-center mb-5">
             <div class="col-lg-4 text-center mb-4 mb-lg-0">
@@ -68,7 +111,7 @@
             </div>
             <div class="col-lg-8">
                 <h2>Spring Replacement</h2>
-                <p class="lead">Professional garage door spring replacement ensuring safe and reliable functionality.</p>
+                <p class="lead">Specialized in professional garage door spring replacement services, ensuring safe and reliable functionality.</p>
                 <div class="service-features mb-4">
                     <div class="row g-3">
                         <div class="col-md-6">
@@ -101,6 +144,49 @@
             </div>
         </div>
 
+        <!-- Remote/Keypad Programming -->
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-4 text-center mb-4 mb-lg-0">
+                <img src="{{ url_for('static', filename='img/services/installation.svg') }}" alt="Programming" class="img-fluid mb-3" width="150">
+                <div class="pricing-tag">
+                    <span class="display-6">$100-$150</span>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <h2>Remote/Keypad Programming</h2>
+                <p class="lead">Expert programming and installation services for garage door openers and access systems.</p>
+                <div class="service-features mb-4">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i data-feather="check" class="text-success me-2"></i>
+                                <span>Remote control replacement</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i data-feather="check" class="text-success me-2"></i>
+                                <span>Remote programming</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i data-feather="check" class="text-success me-2"></i>
+                                <span>Keypad setup</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i data-feather="check" class="text-success me-2"></i>
+                                <span>Sensor alignment</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="{{ url_for('contact') }}?service=programming" class="btn btn-primary">Schedule Service</a>
+            </div>
+        </div>
+
         <!-- Cable Repair -->
         <div class="row align-items-center mb-5">
             <div class="col-lg-4 text-center mb-4 mb-lg-0">
@@ -111,7 +197,7 @@
             </div>
             <div class="col-lg-8">
                 <h2>Cable Repair</h2>
-                <p class="lead">Expert cable repair and replacement services for smooth garage door operation.</p>
+                <p class="lead">Expert cable repair services ensuring smooth and safe operation of your garage door.</p>
                 <div class="service-features mb-4">
                     <div class="row g-3">
                         <div class="col-md-6">
@@ -135,7 +221,7 @@
                         <div class="col-md-6">
                             <div class="d-flex align-items-center">
                                 <i data-feather="check" class="text-success me-2"></i>
-                                <span>Balance testing</span>
+                                <span>Safety testing</span>
                             </div>
                         </div>
                     </div>
@@ -150,12 +236,11 @@
                 <img src="{{ url_for('static', filename='img/services/maintenance.svg') }}" alt="Maintenance" class="img-fluid mb-3" width="150">
                 <div class="pricing-tag">
                     <span class="display-6">$100-$120</span>
-                    <span class="text-muted">/visit</span>
                 </div>
             </div>
             <div class="col-lg-8">
-                <h2>Maintenance</h2>
-                <p class="lead">Comprehensive maintenance service to ensure smooth operation and prevent issues.</p>
+                <h2>Maintenance and Inspection</h2>
+                <p class="lead">Regular maintenance to prevent issues and ensure smooth operation.</p>
                 <div class="service-features mb-4">
                     <div class="row g-3">
                         <div class="col-md-6">
@@ -173,13 +258,13 @@
                         <div class="col-md-6">
                             <div class="d-flex align-items-center">
                                 <i data-feather="check" class="text-success me-2"></i>
-                                <span>Safety inspection</span>
+                                <span>Parts assessment</span>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="d-flex align-items-center">
                                 <i data-feather="check" class="text-success me-2"></i>
-                                <span>Parts assessment</span>
+                                <span>Safety inspection</span>
                             </div>
                         </div>
                     </div>
@@ -188,139 +273,8 @@
             </div>
         </div>
 
-        <!-- Remote/Keypad Programming -->
+        <!-- System Conversion -->
         <div class="row align-items-center mb-5">
-            <div class="col-lg-4 text-center mb-4 mb-lg-0">
-                <img src="{{ url_for('static', filename='img/services/installation.svg') }}" alt="Programming" class="img-fluid mb-3" width="150">
-                <div class="pricing-tag">
-                    <span class="display-6">$100-$150</span>
-                </div>
-            </div>
-            <div class="col-lg-8">
-                <h2>Remote/Keypad Programming</h2>
-                <p class="lead">Expert programming services for your garage door opener and access systems.</p>
-                <div class="service-features mb-4">
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-center">
-                                <i data-feather="check" class="text-success me-2"></i>
-                                <span>Remote programming</span>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-center">
-                                <i data-feather="check" class="text-success me-2"></i>
-                                <span>Keypad setup</span>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-center">
-                                <i data-feather="check" class="text-success me-2"></i>
-                                <span>Sensor alignment</span>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-center">
-                                <i data-feather="check" class="text-success me-2"></i>
-                                <span>System testing</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a href="{{ url_for('contact') }}?service=programming" class="btn btn-primary">Schedule Service</a>
-            </div>
-        </div>
-
-        <!-- Roller Replacement -->
-        <div class="row align-items-center mb-5">
-            <div class="col-lg-4 text-center mb-4 mb-lg-0">
-                <img src="{{ url_for('static', filename='img/services/repair.svg') }}" alt="Roller Services" class="img-fluid mb-3" width="150">
-                <div class="pricing-tag">
-                    <span class="display-6">Contact Us</span>
-                    <span class="text-muted">for pricing</span>
-                </div>
-            </div>
-            <div class="col-lg-8">
-                <h2>Roller Services</h2>
-                <p class="lead">Complete roller maintenance and replacement services.</p>
-                <div class="service-features mb-4">
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-center">
-                                <i data-feather="check" class="text-success me-2"></i>
-                                <span>Roller lubrication</span>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-center">
-                                <i data-feather="check" class="text-success me-2"></i>
-                                <span>Roller replacement</span>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-center">
-                                <i data-feather="check" class="text-success me-2"></i>
-                                <span>Roller alignment</span>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-center">
-                                <i data-feather="check" class="text-success me-2"></i>
-                                <span>Installation services</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a href="{{ url_for('contact') }}?service=roller" class="btn btn-primary">Get Quote</a>
-            </div>
-        </div>
-
-        <!-- Track Repair -->
-        <div class="row align-items-center mb-5">
-            <div class="col-lg-4 text-center mb-4 mb-lg-0">
-                <img src="{{ url_for('static', filename='img/services/repair.svg') }}" alt="Track Repair" class="img-fluid mb-3" width="150">
-                <div class="pricing-tag">
-                    <span class="display-6">Contact Us</span>
-                    <span class="text-muted">for pricing</span>
-                </div>
-            </div>
-            <div class="col-lg-8">
-                <h2>Track Repair Services</h2>
-                <p class="lead">Expert track repair and alignment services for smooth door operation.</p>
-                <div class="service-features mb-4">
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-center">
-                                <i data-feather="check" class="text-success me-2"></i>
-                                <span>Track adjustment</span>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-center">
-                                <i data-feather="check" class="text-success me-2"></i>
-                                <span>Track replacement</span>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-center">
-                                <i data-feather="check" class="text-success me-2"></i>
-                                <span>Alignment service</span>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-center">
-                                <i data-feather="check" class="text-success me-2"></i>
-                                <span>Safety testing</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a href="{{ url_for('contact') }}?service=track" class="btn btn-primary">Get Quote</a>
-            </div>
-        </div>
-
-        <!-- WD System Conversion -->
-        <div class="row align-items-center">
             <div class="col-lg-4 text-center mb-4 mb-lg-0">
                 <img src="{{ url_for('static', filename='img/services/installation.svg') }}" alt="System Conversion" class="img-fluid mb-3" width="150">
                 <div class="pricing-tag">
@@ -329,7 +283,7 @@
             </div>
             <div class="col-lg-8">
                 <h2>WD System to Regular Spring System Conversion</h2>
-                <p class="lead">Professional conversion service for improved functionality.</p>
+                <p class="lead">Professional conversion service to upgrade your garage door system.</p>
                 <div class="service-features mb-4">
                     <div class="row g-3">
                         <div class="col-md-6">
@@ -353,7 +307,7 @@
                         <div class="col-md-6">
                             <div class="d-flex align-items-center">
                                 <i data-feather="check" class="text-success me-2"></i>
-                                <span>Safety verification</span>
+                                <span>Safety inspection</span>
                             </div>
                         </div>
                     </div>
@@ -361,14 +315,6 @@
                 <a href="{{ url_for('contact') }}?service=conversion" class="btn btn-primary">Schedule Conversion</a>
             </div>
         </div>
-    </div>
-</section>
-
-<section class="cta py-5 bg-body-tertiary">
-    <div class="container text-center">
-        <h2 class="mb-4">Need Help Choosing a Service?</h2>
-        <p class="lead mb-4">Our experts are here to help you find the right solution for your garage door needs.</p>
-        <a href="{{ url_for('contact') }}" class="btn btn-lg btn-primary">Get Free Consultation</a>
     </div>
 </section>
 {% endblock %}
