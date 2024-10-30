@@ -19,6 +19,10 @@
 <section class="services py-5">
     <div class="container">
         <h2 class="text-center mb-5">Our Services</h2>
+        <div class="alert alert-success mb-4">
+            <i data-feather="info" class="me-2"></i>
+            Free assessment (value $35) included with any service booking!
+        </div>
         <div class="row g-4">
             <div class="col-md-3">
                 <div class="service-card">
@@ -63,6 +67,10 @@
 <section class="pricing py-5 bg-body-tertiary">
     <div class="container">
         <h2 class="text-center mb-5">Our Pricing</h2>
+        <div class="alert alert-success mb-4">
+            <i data-feather="info" class="me-2"></i>
+            Free assessment (value $35) included with any service booking! Save on your service today.
+        </div>
         <div class="row g-4">
             <div class="col-md-4">
                 <div class="pricing-card p-4">
@@ -70,6 +78,7 @@
                     <div class="price-tag my-4">
                         <span class="display-4">$35</span>
                         <span class="text-muted">/visit</span>
+                        <div class="text-success">Free with any service!</div>
                     </div>
                     <ul class="list-unstyled">
                         <li class="mb-2"><i data-feather="check" class="text-success me-2"></i>Visual inspection</li>
@@ -77,6 +86,9 @@
                         <li class="mb-2"><i data-feather="check" class="text-success me-2"></i>Cost estimate</li>
                         <li class="mb-2"><i data-feather="check" class="text-success me-2"></i>Service recommendations</li>
                     </ul>
+                    <div class="pricing-note mb-3">
+                        <small class="text-muted">* Price subject to applicable taxes (PST/GST)</small>
+                    </div>
                     <a href="{{ url_for('contact') }}" class="btn btn-outline-primary w-100">Schedule Service</a>
                 </div>
             </div>
@@ -85,7 +97,8 @@
                     <h3>Spring Replacement</h3>
                     <div class="price-tag my-4">
                         <span class="display-4">$250</span>
-                        <span class="text-muted">-$420</span>
+                        <span class="text-muted">-$420 + tax</span>
+                        <div class="text-success">Includes free assessment!</div>
                     </div>
                     <ul class="list-unstyled">
                         <li class="mb-2"><i data-feather="check" class="text-success me-2"></i>Expert installation</li>
@@ -93,6 +106,9 @@
                         <li class="mb-2"><i data-feather="check" class="text-success me-2"></i>Safety inspection</li>
                         <li class="mb-2"><i data-feather="check" class="text-success me-2"></i>Balance testing</li>
                     </ul>
+                    <div class="pricing-note mb-3">
+                        <small class="text-muted">* Price subject to applicable taxes (PST/GST)</small>
+                    </div>
                     <a href="{{ url_for('contact') }}" class="btn btn-primary w-100">Get Started</a>
                 </div>
             </div>
@@ -101,7 +117,8 @@
                     <h3>Cable Repair</h3>
                     <div class="price-tag my-4">
                         <span class="display-4">$300</span>
-                        <span class="text-muted">-$400</span>
+                        <span class="text-muted">-$400 + tax</span>
+                        <div class="text-success">Includes free assessment!</div>
                     </div>
                     <ul class="list-unstyled">
                         <li class="mb-2"><i data-feather="check" class="text-success me-2"></i>Cable installation</li>
@@ -109,9 +126,15 @@
                         <li class="mb-2"><i data-feather="check" class="text-success me-2"></i>Cable drums</li>
                         <li class="mb-2"><i data-feather="check" class="text-success me-2"></i>Balance testing</li>
                     </ul>
+                    <div class="pricing-note mb-3">
+                        <small class="text-muted">* Price subject to applicable taxes (PST/GST)</small>
+                    </div>
                     <a href="{{ url_for('contact') }}" class="btn btn-outline-primary w-100">Request Quote</a>
                 </div>
             </div>
+        </div>
+        <div class="text-center mt-4">
+            <small class="text-muted">All prices are subject to applicable taxes (PST/GST). Free assessment (value $35) included with all services.</small>
         </div>
     </div>
 </section>
