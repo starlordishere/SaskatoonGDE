@@ -1,4 +1,3 @@
-// Form validation
 document.addEventListener('DOMContentLoaded', function() {
     // Form validation
     const forms = document.querySelectorAll('.needs-validation');
@@ -35,10 +34,15 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-});
 
-// Initialize tooltips
-var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
-    return new bootstrap.Tooltip(tooltipTriggerEl);
+    // Initialize tooltips
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+
+    // Initialize Feather icons
+    if (typeof feather !== 'undefined') {
+        feather.replace();
+    }
 });
