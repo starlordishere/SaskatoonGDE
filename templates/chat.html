@@ -25,39 +25,45 @@
 {% endblock %}
 
 {% block extra_js %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" defer></script>
+<!-- Load Socket.IO before our chat initialization code -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
 <script>
-    // Wait for DOM content to be loaded before initializing Socket.IO
-    document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
+    if (typeof io !== 'undefined') {
         const socket = io();
         const chatForm = document.getElementById('chat-form');
         const messageInput = document.getElementById('message-input');
         const chatMessages = document.getElementById('chat-messages');
 
         // Handle form submission
-        chatForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const message = messageInput.value.trim();
-            if (message) {
-                socket.emit('send_message', {message: message});
-                messageInput.value = '';
-            }
-        });
+        if (chatForm) {
+            chatForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const message = messageInput.value.trim();
+                if (message) {
+                    socket.emit('send_message', {message: message});
+                    messageInput.value = '';
+                }
+            });
+        }
 
         // Handle incoming messages
         socket.on('receive_message', function(data) {
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `mb-3 ${data.is_support ? 'text-end' : ''}`;
-            
-            const messageBubble = document.createElement('div');
-            messageBubble.className = `d-inline-block p-2 rounded-3 ${data.is_support ? 'bg-primary text-white' : 'bg-light'}`;
-            messageBubble.style.maxWidth = '75%';
-            messageBubble.textContent = data.message;
-            
-            messageDiv.appendChild(messageBubble);
-            chatMessages.appendChild(messageDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
+            if (chatMessages) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `mb-3 ${data.is_support ? 'text-end' : ''}`;
+                
+                const messageBubble = document.createElement('div');
+                messageBubble.className = `d-inline-block p-2 rounded-3 ${data.is_support ? 'bg-primary text-white' : 'bg-light'}`;
+                messageBubble.style.maxWidth = '75%';
+                messageBubble.textContent = data.message;
+                
+                messageDiv.appendChild(messageBubble);
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
         });
-    });
+    }
+});
 </script>
 {% endblock %}
