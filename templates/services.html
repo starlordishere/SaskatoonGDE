@@ -18,118 +18,150 @@
 
 <section class="services-detail py-5">
     <div class="container">
-        <!-- Service Call + Assessment -->
+        <!-- Spring Services -->
         <div class="row align-items-center mb-5">
             <div class="col-lg-4 text-center mb-4 mb-lg-0">
-                <img src="{{ url_for('static', filename='img/services/repair.svg') }}" alt="Service Assessment" class="img-fluid mb-3" width="150">
+                <img src="{{ url_for('static', filename='img/services/repair.svg') }}" alt="Spring Services" class="img-fluid mb-3" width="150">
                 <div class="pricing-tag">
-                    <span class="display-6">$35</span>
-                    <span class="text-muted">/visit</span>
-                    <div class="text-success small">Free with any service!</div>
-                </div>
-            </div>
-            <div class="col-lg-8">
-                <h2>Service Call + Assessment</h2>
-                <p class="lead">Professional evaluation and assessment of your garage door system.</p>
-                <div class="alert alert-info">
-                    <i data-feather="info" class="me-2"></i>
-                    Assessment fee is waived when proceeding with any repair service!
-                </div>
-                <div class="service-features mb-4">
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-center">
-                                <i data-feather="check" class="text-success me-2"></i>
-                                <span>Comprehensive inspection</span>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-center">
-                                <i data-feather="check" class="text-success me-2"></i>
-                                <span>Problem diagnosis</span>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-center">
-                                <i data-feather="check" class="text-success me-2"></i>
-                                <span>Cost estimate</span>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-center">
-                                <i data-feather="check" class="text-success me-2"></i>
-                                <span>Service recommendations</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pricing-note mb-3">
-                    <small class="text-muted">* All prices are subject to applicable taxes (PST/GST)</small>
-                </div>
-                <a href="{{ url_for('contact') }}?service=assessment" class="btn btn-primary">Schedule Assessment</a>
-            </div>
-        </div>
-
-        <!-- Rest of the services remain the same but add tax note to each -->
-        {% for service in [
-            {
-                'name': 'Retainer and Rubber Seal',
-                'price': '$180-$220',
-                'image': 'repair.svg',
-                'description': 'Professional weatherstripping bottom seal replacement to maintain your garage door\'s efficiency and protection.',
-                'features': ['Weather protection', 'Energy efficiency', 'Professional installation', 'Quality materials'],
-                'alert_type': 'info',
-                'alert_message': 'A proper seal keeps out drafts, water, dirt, and pests while maintaining garage insulation.',
-                'service_type': 'seal'
-            },
-            {
-                'name': 'Spring Replacement',
-                'price': '$250-$420',
-                'image': 'repair.svg',
-                'description': 'Expert garage door spring replacement services ensuring safe and reliable functionality.',
-                'features': ['Expert installation', 'Quality springs', 'Safety inspection', 'Balance testing'],
-                'alert_type': 'danger',
-                'alert_message': 'Never attempt to fix garage door springs yourself. Springs are under high tension and can cause serious injury if not handled by professionals.',
-                'service_type': 'spring'
-            }
-        ] %}
-        <div class="row align-items-center mb-5">
-            <div class="col-lg-4 text-center mb-4 mb-lg-0">
-                <img src="{{ url_for('static', filename='img/services/' + service.image) }}" alt="{{ service.name }}" class="img-fluid mb-3" width="150">
-                <div class="pricing-tag">
-                    <span class="display-6">{{ service.price }}</span>
+                    <span class="display-6">$380-$400</span>
+                    <span class="text-muted">/pair</span>
                     <div class="text-success small">Includes free assessment!</div>
                 </div>
             </div>
             <div class="col-lg-8">
-                <h2>{{ service.name }}</h2>
-                <p class="lead">{{ service.description }}</p>
-                <div class="alert alert-{{ service.alert_type }}">
-                    <i data-feather="{{ 'alert-triangle' if service.alert_type == 'danger' else 'info' }}" class="me-2"></i>
-                    {{ service.alert_message }}
+                <h2>Spring Replacement Services</h2>
+                <p class="lead">Professional spring replacement for standard residential garage doors.</p>
+                <div class="alert alert-danger">
+                    <i data-feather="alert-triangle" class="me-2"></i>
+                    Springs are under high tension. Never attempt DIY repairs - always contact professionals for your safety.
                 </div>
                 <div class="service-features mb-4">
                     <div class="row g-3">
-                        {% for feature in service.features %}
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-center">
-                                <i data-feather="check" class="text-success me-2"></i>
-                                <span>{{ feature }}</span>
-                            </div>
+                        <div class="col-12">
+                            <h5>Standard Torsion Spring Pricing:</h5>
+                            <ul class="list-unstyled">
+                                <li><i data-feather="check" class="text-success me-2"></i>Standard pair (sizes 207-234): $380 plus GST</li>
+                                <li><i data-feather="check" class="text-success me-2"></i>Larger pair (sizes 243-262): $400 plus GST</li>
+                                <li><i data-feather="check" class="text-success me-2"></i>Single spring system: $260 plus GST (includes warranty)</li>
+                                <li><i data-feather="check" class="text-success me-2"></i>3-spring system: $240 each ($720 total)</li>
+                                <li><i data-feather="check" class="text-success me-2"></i>4-spring system: $240 each ($960 total)</li>
+                            </ul>
                         </div>
-                        {% endfor %}
                     </div>
                 </div>
                 <div class="pricing-note mb-3">
                     <small class="text-muted">* All prices are subject to applicable taxes (PST/GST)</small>
                 </div>
-                <a href="{{ url_for('contact') }}?service={{ service.service_type }}" class="btn btn-primary">Schedule Service</a>
+                <a href="{{ url_for('contact') }}?service=spring" class="btn btn-primary">Schedule Service</a>
             </div>
         </div>
-        {% endfor %}
 
-        <!-- Add similar tax notes and free assessment info to remaining services -->
-        
+        <!-- Cable Services -->
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-4 text-center mb-4 mb-lg-0">
+                <img src="{{ url_for('static', filename='img/services/repair.svg') }}" alt="Cable Services" class="img-fluid mb-3" width="150">
+                <div class="pricing-tag">
+                    <span class="display-6">$220-$260</span>
+                    <span class="text-muted">/pair</span>
+                    <div class="text-success small">Includes free assessment!</div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <h2>Cable Services</h2>
+                <p class="lead">Expert cable repair and replacement services.</p>
+                <div class="service-features mb-4">
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <h5>Cable Service Options:</h5>
+                            <ul class="list-unstyled">
+                                <li><i data-feather="check" class="text-success me-2"></i>Simple cable replacement: $220 per pair</li>
+                                <li><i data-feather="check" class="text-success me-2"></i>Cable with brackets: Up to $260</li>
+                                <li><i data-feather="check" class="text-success me-2"></i>Cable reattachment service: $220</li>
+                            </ul>
+                            <div class="alert alert-info mt-3">
+                                <i data-feather="info" class="me-2"></i>
+                                Price may vary based on door condition and installation height.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pricing-note mb-3">
+                    <small class="text-muted">* All prices are subject to applicable taxes (PST/GST)</small>
+                </div>
+                <a href="{{ url_for('contact') }}?service=cable" class="btn btn-primary">Schedule Service</a>
+            </div>
+        </div>
+
+        <!-- Opener Installation -->
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-4 text-center mb-4 mb-lg-0">
+                <img src="{{ url_for('static', filename='img/services/installation.svg') }}" alt="Opener Installation" class="img-fluid mb-3" width="150">
+                <div class="pricing-tag">
+                    <span class="display-6">From $700</span>
+                    <div class="text-success small">Includes free assessment!</div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <h2>Opener Installation</h2>
+                <p class="lead">Professional garage door opener installation services.</p>
+                <div class="service-features mb-4">
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <h5>Popular Opener Models:</h5>
+                            <ul class="list-unstyled">
+                                <li><i data-feather="check" class="text-success me-2"></i>Chamberlain B2405C (7ft): $700 - Ultra Quiet Belt Drive with WiFi</li>
+                                <li><i data-feather="check" class="text-success me-2"></i>Chamberlain B4505TC (7ft): $750 - 3/4 HP Ultra Quiet Belt Drive</li>
+                                <li><i data-feather="check" class="text-success me-2"></i>LM81550 (7ft): $720 - Standard 1/2 HP Belt Drive Smart Opener</li>
+                                <li><i data-feather="check" class="text-success me-2"></i>8ft rail options available (+$30-50)</li>
+                            </ul>
+                            <div class="alert alert-info mt-3">
+                                <i data-feather="info" class="me-2"></i>
+                                New installation (no prior opener) adds $100 to listed prices.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pricing-note mb-3">
+                    <small class="text-muted">* All prices are subject to applicable taxes (PST/GST)</small>
+                </div>
+                <a href="{{ url_for('contact') }}?service=opener" class="btn btn-primary">Schedule Installation</a>
+            </div>
+        </div>
+
+        <!-- Additional Services -->
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-4 text-center mb-4 mb-lg-0">
+                <img src="{{ url_for('static', filename='img/services/maintenance.svg') }}" alt="Additional Services" class="img-fluid mb-3" width="150">
+                <div class="pricing-tag">
+                    <span class="display-6">Various</span>
+                    <div class="text-success small">Includes free assessment!</div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <h2>Additional Services</h2>
+                <p class="lead">Comprehensive garage door maintenance and repair options.</p>
+                <div class="service-features mb-4">
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <h5>Service Options:</h5>
+                            <ul class="list-unstyled">
+                                <li><i data-feather="check" class="text-success me-2"></i>Wayne Dalton to Torsion Spring Conversion: $490</li>
+                                <li><i data-feather="check" class="text-success me-2"></i>Remote/Keypad with Maintenance: $130-140</li>
+                                <li><i data-feather="check" class="text-success me-2"></i>Bottom Seal Replacement: $130-210</li>
+                                <li><i data-feather="check" class="text-success me-2"></i>Roller Replacement: $20 each or $180 for all</li>
+                                <li><i data-feather="check" class="text-success me-2"></i>Minor Repairs (no parts): $120-160</li>
+                                <li><i data-feather="check" class="text-success me-2"></i>Component Adjustments: $150 each</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="pricing-note mb-3">
+                    <small class="text-muted">* All prices are subject to applicable taxes (PST/GST)</small><br>
+                    <small class="text-muted">* $35 travel fee applies outside of Saskatoon</small>
+                </div>
+                <a href="{{ url_for('contact') }}?service=other" class="btn btn-primary">Schedule Service</a>
+            </div>
+        </div>
     </div>
 </section>
 
