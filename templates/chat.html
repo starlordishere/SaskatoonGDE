@@ -25,8 +25,9 @@
 {% endblock %}
 
 {% block extra_js %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" defer></script>
 <script>
+    // Wait for DOM content to be loaded before initializing Socket.IO
     document.addEventListener('DOMContentLoaded', function() {
         const socket = io();
         const chatForm = document.getElementById('chat-form');
