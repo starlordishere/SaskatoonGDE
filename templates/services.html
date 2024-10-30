@@ -1,0 +1,202 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero position-relative">
+    <div class="container py-5">
+        <div class="row align-items-center min-vh-50">
+            <div class="col-lg-8">
+                <h1 class="display-4 fw-bold text-contrast">Our Garage Door Services</h1>
+                <p class="lead text-contrast">Professional solutions for all your garage door needs in Saskatoon.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="services-detail py-5">
+    <div class="container">
+        <!-- Repair Services -->
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-4 text-center mb-4 mb-lg-0">
+                <img src="{{ url_for('static', filename='img/services/repair.svg') }}" alt="Repair Services" class="img-fluid mb-3" width="150">
+                <div class="pricing-tag">
+                    <span class="display-6">$149</span>
+                    <span class="text-muted">/service</span>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <h2>Repair Services</h2>
+                <p class="lead">Expert repair solutions for all types of garage door issues.</p>
+                <div class="service-features mb-4">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i data-feather="check" class="text-success me-2"></i>
+                                <span>Spring replacement</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i data-feather="check" class="text-success me-2"></i>
+                                <span>Cable repairs</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i data-feather="check" class="text-success me-2"></i>
+                                <span>Opener repairs</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i data-feather="check" class="text-success me-2"></i>
+                                <span>Track alignment</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="{{ url_for('contact') }}?service=repair" class="btn btn-primary">Schedule Repair</a>
+            </div>
+        </div>
+
+        <!-- Installation Services -->
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-4 text-center mb-4 mb-lg-0">
+                <img src="{{ url_for('static', filename='img/services/installation.svg') }}" alt="Installation Services" class="img-fluid mb-3" width="150">
+                <div class="pricing-tag">
+                    <span class="display-6">$799</span>
+                    <span class="text-muted">/installation</span>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <h2>New Installation</h2>
+                <p class="lead">Professional installation of modern garage doors with premium features.</p>
+                <div class="service-features mb-4">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i data-feather="check" class="text-success me-2"></i>
+                                <span>Wide selection of styles</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i data-feather="check" class="text-success me-2"></i>
+                                <span>Smart opener options</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i data-feather="check" class="text-success me-2"></i>
+                                <span>5-year warranty</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i data-feather="check" class="text-success me-2"></i>
+                                <span>Professional installation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="{{ url_for('contact') }}?service=installation" class="btn btn-primary">Get Quote</a>
+            </div>
+        </div>
+
+        <!-- Maintenance Services -->
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-4 text-center mb-4 mb-lg-0">
+                <img src="{{ url_for('static', filename='img/services/maintenance.svg') }}" alt="Maintenance Services" class="img-fluid mb-3" width="150">
+                <div class="pricing-tag">
+                    <span class="display-6">$89</span>
+                    <span class="text-muted">/visit</span>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <h2>Maintenance</h2>
+                <p class="lead">Regular maintenance to ensure smooth operation and prevent future issues.</p>
+                <div class="service-features mb-4">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i data-feather="check" class="text-success me-2"></i>
+                                <span>Safety inspection</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i data-feather="check" class="text-success me-2"></i>
+                                <span>Lubrication service</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i data-feather="check" class="text-success me-2"></i>
+                                <span>Hardware tightening</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i data-feather="check" class="text-success me-2"></i>
+                                <span>Performance testing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="{{ url_for('contact') }}?service=maintenance" class="btn btn-primary">Schedule Maintenance</a>
+            </div>
+        </div>
+
+        <!-- Emergency Services -->
+        <div class="row align-items-center">
+            <div class="col-lg-4 text-center mb-4 mb-lg-0">
+                <img src="{{ url_for('static', filename='img/services/emergency.svg') }}" alt="Emergency Services" class="img-fluid mb-3" width="150">
+                <div class="pricing-tag">
+                    <span class="display-6">$199</span>
+                    <span class="text-muted">/emergency</span>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <h2>24/7 Emergency Services</h2>
+                <p class="lead">Available around the clock for urgent garage door problems.</p>
+                <div class="service-features mb-4">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i data-feather="check" class="text-success me-2"></i>
+                                <span>24/7 availability</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i data-feather="check" class="text-success me-2"></i>
+                                <span>Quick response time</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i data-feather="check" class="text-success me-2"></i>
+                                <span>Emergency repairs</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i data-feather="check" class="text-success me-2"></i>
+                                <span>Same-day service</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="tel:+13065550123" class="btn btn-primary">Call Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta py-5 bg-body-tertiary">
+    <div class="container text-center">
+        <h2 class="mb-4">Need Help Choosing a Service?</h2>
+        <p class="lead mb-4">Our experts are here to help you find the right solution for your garage door needs.</p>
+        <a href="{{ url_for('contact') }}" class="btn btn-lg btn-primary">Get Free Consultation</a>
+    </div>
+</section>
+{% endblock %}
