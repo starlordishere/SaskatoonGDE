@@ -324,6 +324,7 @@ dependencies = [
     { name = "flask-socketio" },
     { name = "flask-sqlalchemy" },
     { name = "psycopg2-binary" },
+    { name = "python-socketio" },
 ]
 
 [package.metadata]
@@ -334,6 +335,7 @@ requires-dist = [
     { name = "flask-socketio", specifier = ">=5.4.1" },
     { name = "flask-sqlalchemy", specifier = ">=3.1.1" },
     { name = "psycopg2-binary", specifier = ">=2.9.10" },
+    { name = "python-socketio" },
 ]
 
 [[package]]
