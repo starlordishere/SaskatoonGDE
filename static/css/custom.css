@@ -10,9 +10,12 @@
 
 /* Enhanced logo styles */
 .navbar-brand img {
-    height: 50px;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    height: 80px;
+    width: auto;
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.4));
     transition: transform 0.3s ease;
+    margin: 12px 0;
+    padding-right: 24px;
 }
 
 .navbar-brand:hover img {
