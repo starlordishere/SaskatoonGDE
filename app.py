@@ -44,6 +44,10 @@ def services():
 def gallery():
     return render_template('gallery.html')
 
+@app.route('/faq')
+def faq():
+    return render_template('faq.html')
+
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     from models import ContactInquiry
