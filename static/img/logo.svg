@@ -1,20 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 280" fill="currentColor">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 160" fill="currentColor">
   <!-- Enhanced geometric elements with increased stroke-width and adjusted spacing -->
-  <path d="M140,240 h1320 v-200 h-1320 z" stroke="currentColor" stroke-width="8" fill="none"/>
-  <path d="M160,40 l640,24 l640,-24 v-20 l-640,24 l-640,-24 z" stroke="currentColor" stroke-width="8" fill="none"/>
+  <path d="M20,140 h1160 v-120 h-1160 z" stroke="currentColor" stroke-width="4" fill="none"/>
+  <path d="M40,20 l560,16 l560,-16 v-10 l-560,16 l-560,-16 z" stroke="currentColor" stroke-width="4" fill="none"/>
   
   <!-- Main text with optimized font size and enhanced shadow -->
-  <text x="200" y="160" font-family="Arial" font-size="64" fill="#dc3545" font-weight="bold" filter="url(#shadow)">
+  <text x="60" y="95" font-family="Arial" font-size="64" fill="#dc3545" font-weight="bold" filter="url(#shadow)">
     Saskatoon Garage Door Experts
   </text>
   
   <!-- Enhanced shadow effect -->
   <defs>
     <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
-      <feOffset dx="4" dy="4" result="offsetblur"/>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="2" dy="2" result="offsetblur"/>
       <feComponentTransfer>
-        <feFuncA type="linear" slope="0.9"/>
+        <feFuncA type="linear" slope="0.7"/>
       </feComponentTransfer>
       <feMerge>
         <feMergeNode/>

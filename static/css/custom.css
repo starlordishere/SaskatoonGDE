@@ -9,6 +9,10 @@
 }
 
 /* Enhanced logo styles */
+.navbar-brand {
+    min-width: 400px;
+}
+
 .navbar-brand img {
     height: 80px;
     width: auto;
@@ -210,6 +214,15 @@
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
+    .navbar-brand {
+        min-width: unset;
+    }
+    
+    .navbar-brand img {
+        height: 60px;
+        padding-right: 12px;
+    }
+    
     .hero {
         padding: 50px 0;
         text-align: center;
