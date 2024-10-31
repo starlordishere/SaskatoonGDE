@@ -18,8 +18,8 @@
     width: auto;
     filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.4));
     transition: transform 0.3s ease;
-    margin: 12px 0;
-    padding-right: 24px;
+    margin: 8px 0;
+    padding-right: 20px;
 }
 
 .navbar-brand:hover img {
@@ -219,8 +219,23 @@
     }
     
     .navbar-brand img {
-        height: 60px;
-        padding-right: 12px;
+        height: 40px;  /* Reduced from 60px */
+        padding-right: 8px;  /* Reduced padding */
+    }
+    
+    .position-fixed.bottom-0.end-0 {
+        bottom: 10px !important;
+        right: 10px !important;
+    }
+    
+    .position-fixed.bottom-0.end-0 .btn {
+        padding: 0.5rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .position-fixed.bottom-0.end-0 svg {
+        width: 20px;
+        height: 20px;
     }
     
     .hero {
