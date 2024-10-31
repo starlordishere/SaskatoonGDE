@@ -16,7 +16,60 @@
     </div>
 </section>
 
-<!-- Rest of the content remains the same until pricing section -->
+<section class="services py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Our Services</h2>
+        <div class="alert alert-success mb-4">
+            <div class="d-flex align-items-center">
+                <i data-feather="check-circle" class="me-2"></i>
+                <div>
+                    <strong>Free Assessment + No Extra Charges!</strong><br>
+                    - Free assessment (value $35) included with any service booking<br>
+                    - No extra charges for weekends, holidays, and after-hours services<br>
+                    - We are open everyday!
+                </div>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="service-card">
+                    <div class="card-body text-center">
+                        <img src="{{ url_for('static', filename='img/services/repair.svg') }}" alt="Repair" class="mb-3" width="64">
+                        <h5 class="card-title">Repair Services</h5>
+                        <p class="card-text">Expert repair services for cables, springs, and all garage door components.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="service-card">
+                    <div class="card-body text-center">
+                        <img src="{{ url_for('static', filename='img/services/installation.svg') }}" alt="Installation" class="mb-3" width="64">
+                        <h5 class="card-title">System Conversion</h5>
+                        <p class="card-text">Professional WD System to Regular Spring System conversion services.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="service-card">
+                    <div class="card-body text-center">
+                        <img src="{{ url_for('static', filename='img/services/maintenance.svg') }}" alt="Maintenance" class="mb-3" width="64">
+                        <h5 class="card-title">Maintenance</h5>
+                        <p class="card-text">Comprehensive maintenance to prevent future issues.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="service-card">
+                    <div class="card-body text-center">
+                        <img src="{{ url_for('static', filename='img/services/emergency.svg') }}" alt="Emergency" class="mb-3" width="64">
+                        <h5 class="card-title">24/7 Emergency</h5>
+                        <p class="card-text">Available for emergency repairs at standard rates.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <section class="pricing py-5 bg-body-tertiary">
     <div class="container">
@@ -50,7 +103,7 @@
                     <div class="pricing-note mb-3">
                         <small class="text-muted">* Price subject to applicable taxes (PST/GST)</small>
                     </div>
-                    <a href="{{ url_for('contact') }}" class="btn btn-primary w-100">Schedule Service</a>
+                    <a href="{{ url_for('contact') }}" class="btn btn-outline-primary w-100">Schedule Service</a>
                 </div>
             </div>
             <div class="col-md-4">
@@ -94,7 +147,7 @@
                         <br>
                         <small class="text-success">* Same rates apply 24/7!</small>
                     </div>
-                    <a href="{{ url_for('contact') }}" class="btn btn-primary w-100">Request Quote</a>
+                    <a href="{{ url_for('contact') }}" class="btn btn-outline-primary w-100">Request Quote</a>
                 </div>
             </div>
         </div>
@@ -104,4 +157,5 @@
     </div>
 </section>
 
+<!-- Rest of the index.html content remains unchanged -->
 {% endblock %}
