@@ -3,79 +3,160 @@
 {% block content %}
 <div class="container py-5">
     <h1 class="text-center mb-5">Our Work Gallery</h1>
-    <p class="lead text-center mb-5">View our completed garage door projects in Saskatoon and surrounding areas.</p>
-    <div class="row g-4">
-        <div class="col-md-4">
-            <div class="gallery-item">
-                <img src="{{ url_for('static', filename='img/gallery/spring-replacement.jpg') }}" alt="Spring Replacement" class="img-fluid mb-2">
-                <div class="gallery-overlay">
-                    <div class="text-center">
-                        <h5 class="text-white">Spring Replacement</h5>
-                        <p class="text-white-50">Professional garage door spring replacement ensuring safe operation</p>
+    <p class="lead text-center mb-4">View our completed garage door projects in Saskatoon and surrounding areas.</p>
+
+    <!-- Cable Repairs Section -->
+    <section class="mb-5">
+        <h2 class="h3 mb-4">Cable Repairs</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h5 class="mb-0">Cable Damage Assessment</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="gallery-item mb-3">
+                                    <img src="{{ url_for('static', filename='img/gallery/IMG_20241031_160215.jpg') }}" alt="Damaged Cable - Before" class="img-fluid rounded">
+                                    <div class="text-center mt-2">
+                                        <small class="text-muted">Before: Frayed Cable</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="gallery-item mb-3">
+                                    <img src="{{ url_for('static', filename='img/gallery/IMG_20241031_160216.jpg') }}" alt="New Cable - After" class="img-fluid rounded">
+                                    <div class="text-center mt-2">
+                                        <small class="text-muted">After: New Cable Installation</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="card-text mt-3">Professional cable replacement service addressing frayed and damaged cables for safe operation.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h5 class="mb-0">Track System</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="gallery-item mb-3">
+                                    <img src="{{ url_for('static', filename='img/gallery/IMG_20241031_160210.jpg') }}" alt="Track System Overview" class="img-fluid rounded">
+                                    <div class="text-center mt-2">
+                                        <small class="text-muted">Track System Overview</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="gallery-item mb-3">
+                                    <img src="{{ url_for('static', filename='img/gallery/IMG_20241031_160213.jpg') }}" alt="Track Detail" class="img-fluid rounded">
+                                    <div class="text-center mt-2">
+                                        <small class="text-muted">Track Installation Detail</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="card-text mt-3">Professional track system installation and alignment for smooth door operation.</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="gallery-item">
-                <img src="{{ url_for('static', filename='img/gallery/cable-repair.jpg') }}" alt="Cable Repair" class="img-fluid mb-2">
-                <div class="gallery-overlay">
-                    <div class="text-center">
-                        <h5 class="text-white">Cable Repair</h5>
-                        <p class="text-white-50">Expert cable repair and maintenance service</p>
+    </section>
+
+    <!-- Weatherstripping Section -->
+    <section class="mb-5">
+        <h2 class="h3 mb-4">Weather Sealing Solutions</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h5 class="mb-0">Bottom Seal Installation</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="gallery-item mb-3">
+                                    <img src="{{ url_for('static', filename='img/gallery/IMG_20241031_160218.jpg') }}" alt="Bottom Seal Component" class="img-fluid rounded">
+                                    <div class="text-center mt-2">
+                                        <small class="text-muted">Seal Component</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="gallery-item mb-3">
+                                    <img src="{{ url_for('static', filename='img/gallery/IMG_20241031_160219.jpg') }}" alt="Seal Installation Process" class="img-fluid rounded">
+                                    <div class="text-center mt-2">
+                                        <small class="text-muted">Installation Process</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="gallery-item mb-3">
+                                    <img src="{{ url_for('static', filename='img/gallery/IMG_20241031_160220.jpg') }}" alt="Completed Seal" class="img-fluid rounded">
+                                    <div class="text-center mt-2">
+                                        <small class="text-muted">Completed Installation</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="card-text mt-3">Professional weatherstripping and bottom seal installation for improved insulation and protection.</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="gallery-item">
-                <img src="{{ url_for('static', filename='img/gallery/track-repair.jpg') }}" alt="Track Repair" class="img-fluid mb-2">
-                <div class="gallery-overlay">
-                    <div class="text-center">
-                        <h5 class="text-white">Track Repair</h5>
-                        <p class="text-white-50">Track adjustment and alignment services</p>
+    </section>
+
+    <!-- Additional Services Section -->
+    <section>
+        <h2 class="h3 mb-4">Additional Services</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="gallery-item">
+                    <img src="{{ url_for('static', filename='img/gallery/spring-replacement.jpg') }}" alt="Spring Replacement" class="img-fluid rounded">
+                    <div class="gallery-overlay">
+                        <div class="text-center">
+                            <h5 class="text-white">Spring Replacement</h5>
+                            <p class="text-white-50">Professional spring replacement service</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="gallery-item">
+                    <img src="{{ url_for('static', filename='img/gallery/opener-installation.jpg') }}" alt="Opener Installation" class="img-fluid rounded">
+                    <div class="gallery-overlay">
+                        <div class="text-center">
+                            <h5 class="text-white">Opener Installation</h5>
+                            <p class="text-white-50">Modern opener installation and setup</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="gallery-item">
+                    <img src="{{ url_for('static', filename='img/gallery/maintenance.jpg') }}" alt="Maintenance" class="img-fluid rounded">
+                    <div class="gallery-overlay">
+                        <div class="text-center">
+                            <h5 class="text-white">Regular Maintenance</h5>
+                            <p class="text-white-50">Comprehensive maintenance services</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="gallery-item">
-                <img src="{{ url_for('static', filename='img/gallery/opener-installation.jpg') }}" alt="Opener Installation" class="img-fluid mb-2">
-                <div class="gallery-overlay">
-                    <div class="text-center">
-                        <h5 class="text-white">Opener Installation</h5>
-                        <p class="text-white-50">Modern garage door opener installation and programming</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="gallery-item">
-                <img src="{{ url_for('static', filename='img/gallery/maintenance.jpg') }}" alt="Maintenance" class="img-fluid mb-2">
-                <div class="gallery-overlay">
-                    <div class="text-center">
-                        <h5 class="text-white">Regular Maintenance</h5>
-                        <p class="text-white-50">Comprehensive maintenance and inspection services</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="gallery-item">
-                <img src="{{ url_for('static', filename='img/gallery/system-conversion.jpg') }}" alt="System Conversion" class="img-fluid mb-2">
-                <div class="gallery-overlay">
-                    <div class="text-center">
-                        <h5 class="text-white">WD to Spring System Conversion</h5>
-                        <p class="text-white-50">Complete system upgrade and conversion</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
+    </section>
+
     <div class="text-center mt-5">
         <p class="lead">Need professional garage door services?</p>
-        <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg">Contact Us for a Free Quote</a>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+            <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg px-4">Get Free Quote</a>
+            <a href="tel:+14747740269" class="btn btn-outline-primary btn-lg px-4">Call Now</a>
+        </div>
     </div>
 </div>
 {% endblock %}
