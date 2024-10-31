@@ -1,7 +1,7 @@
 /* Custom styles to complement Bootstrap */
 :root[data-bs-theme=dark] {
-    --bs-primary: #b91c1c;  /* darker red */
-    --bs-primary-rgb: 185, 28, 28;
+    --bs-primary: #dc3545;
+    --bs-primary-rgb: 220, 53, 69;
     --primary-color: var(--bs-primary);
     --text-color: var(--bs-light);
     --bg-color: var(--bs-dark);
@@ -52,28 +52,6 @@
 
 .hero .btn {
     animation: fadeIn 1.5s ease forwards;
-}
-
-/* Enhanced Button Styles */
-.btn-primary {
-    background-color: var(--bs-primary);
-    border-color: var(--bs-primary);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-    background-color: #991b1b;  /* even darker on hover */
-    border-color: #991b1b;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.btn-lg {
-    padding: 0.75rem 1.5rem;
 }
 
 /* Service Cards */
@@ -224,6 +202,16 @@
     opacity: 1;
 }
 
+/* Chat Button */
+.btn-primary {
+    border-width: 2px;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.2);
+}
+
 /* Mobile responsiveness */
 @media (max-width: 768px) {
     .navbar-brand {
@@ -231,8 +219,8 @@
     }
     
     .navbar-brand img {
-        height: 40px;
-        padding-right: 8px;
+        height: 40px;  /* Reduced from 60px */
+        padding-right: 8px;  /* Reduced padding */
     }
     
     .position-fixed.bottom-0.end-0 {
