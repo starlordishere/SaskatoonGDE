@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 80" fill="currentColor">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 120" fill="currentColor">
   <!-- Enhanced geometric elements with increased stroke-width and adjusted spacing -->
-  <path d="M25,65 h750 v-50 h-750 z" stroke="currentColor" stroke-width="4" fill="none"/>
-  <path d="M45,15 l355,7 l355,-7 v-7 l-355,7 l-355,-7 z" stroke="currentColor" stroke-width="4" fill="none"/>
+  <path d="M50,90 h750 v-70 h-750 z" stroke="currentColor" stroke-width="4" fill="none"/>
+  <path d="M70,20 l355,10 l355,-10 v-8 l-355,10 l-355,-10 z" stroke="currentColor" stroke-width="4" fill="none"/>
   
   <!-- Main text with optimized font size and enhanced shadow -->
-  <text x="45" y="47" font-family="Arial" font-size="32" fill="#dc3545" font-weight="bold" filter="url(#shadow)">
+  <text x="100" y="65" font-family="Arial" font-size="32" fill="#dc3545" font-weight="bold" filter="url(#shadow)">
     Saskatoon Garage Door Experts
   </text>
   
