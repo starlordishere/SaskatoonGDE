@@ -136,8 +136,26 @@ def handle_message(data):
     # Emit the message to all connected clients
     emit('receive_message', {'message': data['message'], 'is_support': False}, broadcast=True)
     
+    # Forward the chat message to support email
+    try:
+        msg = Message(
+            'New Chat Message',
+            recipients=[app.config['MAIL_USERNAME']]
+        )
+        msg.body = f"""
+New chat message received:
+
+Message: {data['message']}
+Time: {datetime.utcnow()}
+
+This message was sent through the live chat system.
+"""
+        mail.send(msg)
+    except Exception as e:
+        print(f"Error sending email: {e}")
+    
     # Simulate support response after customer message
-    support_response = "Thank you for your message. Our support team will be with you shortly."
+    support_response = "Thank you for your message. Our support team will be with you shortly. You can also reach us via WhatsApp at (474) 774-0269 or send us an SMS."
     emit('receive_message', {'message': support_response, 'is_support': True}, broadcast=True)
 
 with app.app_context():

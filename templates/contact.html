@@ -11,6 +11,19 @@
                 <i data-feather="info" class="me-2"></i>
                 Free assessment ($35 value) included with any service booking!
             </div>
+
+            <!-- Quick Contact Options -->
+            <div class="d-flex gap-3 mb-4">
+                <a href="tel:+14747740269" class="btn btn-outline-primary">
+                    <i data-feather="phone" class="me-2"></i>Call Us
+                </a>
+                <a href="https://wa.me/14747740269" class="btn btn-outline-success" target="_blank">
+                    <i data-feather="message-circle" class="me-2"></i>WhatsApp
+                </a>
+                <a href="sms:+14747740269" class="btn btn-outline-info">
+                    <i data-feather="message-square" class="me-2"></i>Send SMS
+                </a>
+            </div>
             
             <form method="POST" action="{{ url_for('contact') }}" class="needs-validation" novalidate>
                 <div class="mb-3">
@@ -73,6 +86,7 @@
                         </div>
                     </div>
                     
+                    <h5 class="mb-3">Contact Options</h5>
                     <ul class="list-unstyled">
                         <li class="mb-3">
                             <i data-feather="map-pin" class="me-2"></i>
@@ -80,12 +94,28 @@
                             <div class="text-info small ms-4">$35 travel fee applies outside Saskatoon</div>
                         </li>
                         <li class="mb-3">
-                            <i data-feather="phone" class="me-2"></i>
-                            <a href="tel:+14747740269" class="text-decoration-none">(474) 774-0269</a>
+                            <a href="tel:+14747740269" class="text-decoration-none d-flex align-items-center">
+                                <i data-feather="phone" class="me-2"></i>
+                                (474) 774-0269
+                            </a>
                         </li>
                         <li class="mb-3">
-                            <i data-feather="mail" class="me-2"></i>
-                            <a href="mailto:gdexperts111@gmail.com" class="text-decoration-none">gdexperts111@gmail.com</a>
+                            <a href="https://wa.me/14747740269" class="text-decoration-none text-success d-flex align-items-center" target="_blank">
+                                <i data-feather="message-circle" class="me-2"></i>
+                                Chat on WhatsApp
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="sms:+14747740269" class="text-decoration-none text-info d-flex align-items-center">
+                                <i data-feather="message-square" class="me-2"></i>
+                                Send SMS
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="mailto:gdexperts111@gmail.com" class="text-decoration-none d-flex align-items-center">
+                                <i data-feather="mail" class="me-2"></i>
+                                gdexperts111@gmail.com
+                            </a>
                         </li>
                     </ul>
                     
