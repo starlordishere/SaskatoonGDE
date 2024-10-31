@@ -168,20 +168,74 @@
     color: var(--bs-primary) !important;
 }
 
-/* Gallery */
+/* Enhanced Gallery Styles */
 .gallery-item {
     position: relative;
     overflow: hidden;
     border-radius: 8px;
     cursor: pointer;
+    margin-bottom: 1rem;
 }
 
 .gallery-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
     transition: transform 0.3s ease;
+    aspect-ratio: 4/3;
 }
 
 .gallery-item:hover img {
-    transform: scale(1.1);
+    transform: scale(1.05);
+}
+
+.gallery-comparison {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.gallery-comparison .image-container {
+    flex: 1;
+    position: relative;
+}
+
+.gallery-comparison img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-comparison .caption {
+    margin-top: 0.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--bs-secondary-color);
+}
+
+/* Gallery Cards */
+.gallery-card {
+    background: var(--card-bg);
+    border: 1px solid var(--bs-border-color);
+    border-radius: 8px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    height: 100%;
+}
+
+.gallery-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--bs-primary);
+}
+
+.gallery-card .card-header {
+    background-color: rgba(var(--bs-primary-rgb), 0.1);
+    border-bottom: 1px solid var(--bs-border-color);
+}
+
+.gallery-card .card-body {
+    padding: 1.5rem;
 }
 
 .gallery-overlay {
@@ -219,8 +273,8 @@
     }
     
     .navbar-brand img {
-        height: 40px;  /* Reduced from 60px */
-        padding-right: 8px;  /* Reduced padding */
+        height: 40px;
+        padding-right: 8px;
     }
     
     .position-fixed.bottom-0.end-0 {
@@ -255,8 +309,20 @@
         margin-bottom: 20px;
     }
     
-    .gallery-item {
-        margin-bottom: 20px;
+    .gallery-comparison {
+        flex-direction: column;
+    }
+    
+    .gallery-comparison .image-container {
+        width: 100%;
+    }
+    
+    .gallery-item img {
+        aspect-ratio: 3/2;
+    }
+    
+    .gallery-card {
+        margin-bottom: 1rem;
     }
 }
 
