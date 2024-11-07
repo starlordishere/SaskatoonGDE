@@ -8,7 +8,7 @@ class Config:
     STATIC_URL_PATH = '/static'
     MAX_CONTENT_LENGTH = 16 * 1024 * 1024  # 16MB max file size
 
-    # Security
+    # Security and HTTPS settings
     SESSION_COOKIE_SECURE = True
     SESSION_COOKIE_HTTPONLY = True
     SESSION_COOKIE_SAMESITE = 'Lax'
@@ -16,6 +16,11 @@ class Config:
     REMEMBER_COOKIE_HTTPONLY = True
     REMEMBER_COOKIE_DURATION = timedelta(days=31)
     PERMANENT_SESSION_LIFETIME = timedelta(days=31)
+    PREFERRED_URL_SCHEME = 'https'
+
+    # Static file caching
+    SEND_FILE_MAX_AGE_DEFAULT = 31536000  # 1 year
+    STATIC_CACHE_TIMEOUT = 2592000  # 30 days
 
     # Database
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
@@ -40,13 +45,15 @@ class ProductionConfig(Config):
     ENV = 'production'
     DEBUG = False
     TESTING = False
-    PREFERRED_URL_SCHEME = 'https'
     SERVER_NAME = 'saskatoongaragedoorexpets.ca'
+    PREFERRED_URL_SCHEME = 'https'
 
 class DevelopmentConfig(Config):
     ENV = 'development'
     DEBUG = True
     TESTING = False
+    SERVER_NAME = None
+    SESSION_COOKIE_SECURE = False
 
 class TestingConfig(Config):
     ENV = 'testing'

@@ -1,5 +1,7 @@
 import os
 import sys
+import logging
+from logging.handlers import RotatingFileHandler
 
 # Add the application directory to the Python path
 path = os.path.dirname(os.path.abspath(__file__))
@@ -20,55 +22,25 @@ application.config.update(
 if not os.path.exists('logs'):
     os.mkdir('logs')
 
-# PythonAnywhere deployment instructions
-"""
-1. Domain Configuration (saskatoongaragedoorexpets.ca):
-   - Log in to PythonAnywhere dashboard
-   - Go to Web tab
-   - Add new web app
-   - Choose manual configuration (Python)
-   - Set Python version to 3.11
-   - Configure WSGI file path: /var/www/yourusername_pythonanywhere_com_wsgi.py
-   - Set working directory to your project directory
-   - Add domain name in the Web tab
+file_handler = RotatingFileHandler(
+    'logs/saskatoon_garage.log',
+    maxBytes=10240,
+    backupCount=10
+)
+file_handler.setFormatter(logging.Formatter(
+    '%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'
+))
+file_handler.setLevel(logging.INFO)
+application.logger.addHandler(file_handler)
+application.logger.setLevel(logging.INFO)
+application.logger.info('Saskatoon Garage Door Experts startup')
 
-2. Static Files:
-   - In Web tab, add static file mapping:
-     URL: /static/
-     Directory: /home/yourusername/saskatoon-garage-door-experts/static/
-
-3. HTTPS/SSL:
-   - Enable HTTPS by clicking "Enable HTTPS" in Web tab
-   - PythonAnywhere provides free SSL certificates
-
-4. Environment Variables:
-   - Add the following in the Web tab's "Environment variables" section:
-     - FLASK_SECRET_KEY
-     - MAIL_USERNAME
-     - MAIL_PASSWORD
-     - DATABASE_URL
-     - PGHOST
-     - PGPORT
-     - PGUSER
-     - PGPASSWORD
-     - PGDATABASE
-
-5. Database:
-   - Use the provided PostgreSQL database URL
-   - Ensure all tables are created using Flask-SQLAlchemy
-
-6. Files to Upload:
-   - All Python files (*.py)
-   - Requirements file (requirements.txt)
-   - Templates directory
-   - Static directory
-   - Log directory (create if not exists)
-
-7. Final Steps:
-   - Install requirements: pip install -r requirements.txt
-   - Reload web app
-   - Check error logs in /var/log/
-"""
+# HTTPS redirect
+@application.before_request
+def before_request():
+    if not application.debug and not request.is_secure:
+        url = request.url.replace('http://', 'https://', 1)
+        return redirect(url, code=301)
 
 if __name__ == '__main__':
     application.run()
