@@ -3,13 +3,16 @@ import logging
 from flask import Flask, render_template, request, flash, redirect, url_for, abort
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase
-from datetime import datetime
+from datetime import datetime, timedelta
 from werkzeug.utils import secure_filename
 from flask_socketio import SocketIO, emit
 from flask_mail import Mail, Message
 
-# Configure logging
-logging.basicConfig(level=logging.INFO)
+# Configure logging with more detailed format
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
 logger = logging.getLogger(__name__)
 
 class Base(DeclarativeBase):
@@ -18,7 +21,12 @@ class Base(DeclarativeBase):
 db = SQLAlchemy(model_class=Base)
 app = Flask(__name__)
 
+# Enhanced security configurations
 app.secret_key = os.environ.get("FLASK_SECRET_KEY") or "saskatoon-garage-experts"
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=7)
+app.config['SESSION_COOKIE_SECURE'] = True
+app.config['SESSION_COOKIE_HTTPONLY'] = True
+app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
 
 # Configure database with SSL
 database_url = os.environ.get("DATABASE_URL")
@@ -43,10 +51,26 @@ app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
 app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
 app.config['MAIL_DEFAULT_SENDER'] = os.environ.get('MAIL_USERNAME')
 
+# Initialize extensions
 logger.info("Initializing database connection...")
 db.init_app(app)
-socketio = SocketIO(app, cors_allowed_origins="*")
+socketio = SocketIO(app, cors_allowed_origins="*", logger=True, engineio_logger=True)
 mail = Mail(app)
+
+@app.before_request
+def before_request():
+    # Log each request for debugging
+    logger.info(f"Incoming request: {request.method} {request.path}")
+    # Remove HTTPS redirect since Replit handles HTTPS automatically
+    return None
+
+@app.after_request
+def after_request(response):
+    # Add security headers
+    response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
+    response.headers['X-Content-Type-Options'] = 'nosniff'
+    response.headers['X-Frame-Options'] = 'SAMEORIGIN'
+    return response
 
 @app.route('/')
 def index():
@@ -161,6 +185,9 @@ def chat():
 
 @socketio.on('send_message')
 def handle_message(data):
+    # Log incoming chat messages
+    logger.info("Received chat message")
+    
     # Emit the message to all connected clients
     emit('receive_message', {'message': data['message'], 'is_support': False}, broadcast=True)
     
