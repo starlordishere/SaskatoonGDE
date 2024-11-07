@@ -229,56 +229,11 @@
         </div>
     </section>
 
-    <!-- Track System Section -->
-    <section class="mb-5">
-        <h2 class="h3 mb-4">Track System Installation</h2>
-        <div class="row g-4">
-            <div class="col-lg-8">
-                <div class="gallery-card">
-                    <div class="card-header">
-                        <h5 class="mb-0">Professional Track Alignment</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="gallery-comparison">
-                            <div class="image-container">
-                                <img src="{{ url_for('static', filename='img/gallery/IMG_20241031_160210.jpg') }}" 
-                                     alt="Track System Overview" 
-                                     class="img-fluid">
-                                <div class="caption">
-                                    <strong>Overview:</strong> Complete track system installation
-                                </div>
-                            </div>
-                            <div class="image-container">
-                                <img src="{{ url_for('static', filename='img/gallery/IMG_20241031_160213.jpg') }}" 
-                                     alt="Track Detail" 
-                                     class="img-fluid">
-                                <div class="caption">
-                                    <strong>Detail:</strong> Precision alignment and mounting
-                                </div>
-                            </div>
-                        </div>
-                        <div class="alert alert-info">
-                            <h6 class="alert-heading"><i data-feather="tool" class="me-2"></i>Professional Track System Installation</h6>
-                            <p class="mb-0">Our track system installations ensure smooth and reliable door operation through:</p>
-                            <ul class="list-unstyled mt-2 mb-0">
-                                <li><i data-feather="check" class="text-success me-2"></i>Precise vertical and horizontal alignment</li>
-                                <li><i data-feather="check" class="text-success me-2"></i>Secure mounting and reinforcement</li>
-                                <li><i data-feather="check" class="text-success me-2"></i>Proper spacing and clearance verification</li>
-                                <li><i data-feather="check" class="text-success me-2"></i>Complete operation testing</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <div class="text-center mt-5">
         <p class="lead">Ready to improve your garage door?</p>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-            <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg px-4">Get Free Quote</a>
-            <a href="tel:+14747740269" class="btn btn-outline-primary btn-lg px-4">Call Now</a>
-        </div>
+        <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg">
+            <i data-feather="phone" class="me-2"></i>Contact Us Today
+        </a>
     </div>
 </div>
 {% endblock %}
