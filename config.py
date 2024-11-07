@@ -18,6 +18,20 @@ class Config:
     PERMANENT_SESSION_LIFETIME = timedelta(days=31)
     PREFERRED_URL_SCHEME = 'https'
 
+    # HSTS settings
+    STRICT_TRANSPORT_SECURITY = True
+    STRICT_TRANSPORT_SECURITY_INCLUDE_SUBDOMAINS = True
+    STRICT_TRANSPORT_SECURITY_PRELOAD = True
+    STRICT_TRANSPORT_SECURITY_MAX_AGE = 31536000  # 1 year
+
+    # CORS settings
+    CORS_HEADERS = [
+        'Content-Type',
+        'Authorization',
+        'X-Requested-With',
+        'Accept'
+    ]
+
     # Static file caching
     SEND_FILE_MAX_AGE_DEFAULT = 31536000  # 1 year
     STATIC_CACHE_TIMEOUT = 2592000  # 30 days
@@ -47,6 +61,10 @@ class ProductionConfig(Config):
     TESTING = False
     SERVER_NAME = 'saskatoongaragedoorexpets.ca'
     PREFERRED_URL_SCHEME = 'https'
+
+    # WWW redirect configuration
+    FORCE_WWW = True
+    WWW_HOSTNAME = 'www.saskatoongaragedoorexpets.ca'
 
 class DevelopmentConfig(Config):
     ENV = 'development'
