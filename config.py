@@ -9,32 +9,11 @@ class Config:
     MAX_CONTENT_LENGTH = 16 * 1024 * 1024  # 16MB max file size
 
     # Security and HTTPS settings
-    SESSION_COOKIE_SECURE = True
     SESSION_COOKIE_HTTPONLY = True
     SESSION_COOKIE_SAMESITE = 'Lax'
-    REMEMBER_COOKIE_SECURE = True
     REMEMBER_COOKIE_HTTPONLY = True
     REMEMBER_COOKIE_DURATION = timedelta(days=31)
     PERMANENT_SESSION_LIFETIME = timedelta(days=31)
-    PREFERRED_URL_SCHEME = 'https'
-
-    # HSTS settings
-    STRICT_TRANSPORT_SECURITY = True
-    STRICT_TRANSPORT_SECURITY_INCLUDE_SUBDOMAINS = True
-    STRICT_TRANSPORT_SECURITY_PRELOAD = True
-    STRICT_TRANSPORT_SECURITY_MAX_AGE = 31536000  # 1 year
-
-    # CORS settings
-    CORS_HEADERS = [
-        'Content-Type',
-        'Authorization',
-        'X-Requested-With',
-        'Accept'
-    ]
-
-    # Static file caching
-    SEND_FILE_MAX_AGE_DEFAULT = 31536000  # 1 year
-    STATIC_CACHE_TIMEOUT = 2592000  # 30 days
 
     # Database
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
@@ -61,17 +40,26 @@ class ProductionConfig(Config):
     TESTING = False
     SERVER_NAME = 'saskatoongaragedoorexpets.ca'
     PREFERRED_URL_SCHEME = 'https'
+    SESSION_COOKIE_SECURE = True
+    REMEMBER_COOKIE_SECURE = True
 
     # WWW redirect configuration
     FORCE_WWW = True
     WWW_HOSTNAME = 'www.saskatoongaragedoorexpets.ca'
 
+    # HSTS settings
+    STRICT_TRANSPORT_SECURITY = True
+    STRICT_TRANSPORT_SECURITY_INCLUDE_SUBDOMAINS = True
+    STRICT_TRANSPORT_SECURITY_PRELOAD = True
+    STRICT_TRANSPORT_SECURITY_MAX_AGE = 31536000  # 1 year
+
 class DevelopmentConfig(Config):
     ENV = 'development'
     DEBUG = True
     TESTING = False
-    SERVER_NAME = None
     SESSION_COOKIE_SECURE = False
+    REMEMBER_COOKIE_SECURE = False
+    PREFERRED_URL_SCHEME = 'http'
 
 class TestingConfig(Config):
     ENV = 'testing'

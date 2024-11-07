@@ -14,8 +14,8 @@ from app import app as application
 
 # Configure production settings
 application.config.update(
-    ENV='production',
-    DEBUG=False,
+    ENV='development',
+    DEBUG=True,
     PREFERRED_URL_SCHEME='https'
 )
 
