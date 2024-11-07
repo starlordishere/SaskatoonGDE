@@ -159,7 +159,7 @@ This message was sent through the live chat system.
         print(f"Error sending email: {e}")
     
     # Simulate support response after customer message
-    support_response = "Thank you for your message. Our support team will be with you shortly. You can also reach us via SMS at (474) 774-0269 or send us an email."
+    support_response = "Thank you for your message. Our support team will be with you shortly. You can also reach us via WhatsApp at (474) 774-0269 or send us an SMS."
     emit('receive_message', {'message': support_response, 'is_support': True}, broadcast=True)
 
 with app.app_context():
