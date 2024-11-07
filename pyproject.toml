@@ -14,4 +14,5 @@ dependencies = [
     "flask-mail>=0.10.0",
     "sqlalchemy>=2.0.36",
     "werkzeug>=3.0.6",
+    "flask-talisman>=1.1.0",
 ]

@@ -6,6 +6,7 @@ from datetime import datetime
 from werkzeug.utils import secure_filename
 from flask_socketio import SocketIO, emit
 from flask_mail import Mail, Message
+from flask_talisman import Talisman
 
 class Base(DeclarativeBase):
     pass
@@ -13,12 +14,19 @@ class Base(DeclarativeBase):
 db = SQLAlchemy(model_class=Base)
 app = Flask(__name__)
 
+# Production configurations
 app.secret_key = os.environ.get("FLASK_SECRET_KEY") or "saskatoon-garage-experts"
 app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
 app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
     "pool_recycle": 300,
     "pool_pre_ping": True,
 }
+
+# Security configurations
+app.config['SESSION_COOKIE_SECURE'] = True
+app.config['SESSION_COOKIE_HTTPONLY'] = True
+app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
+app.config['PREFERRED_URL_SCHEME'] = 'https'
 
 # Mail configuration
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
@@ -32,6 +40,43 @@ db.init_app(app)
 socketio = SocketIO(app)
 mail = Mail(app)
 
+# Initialize Talisman with security configurations for custom domain
+talisman = Talisman(
+    app,
+    force_https=True,
+    strict_transport_security=True,
+    session_cookie_secure=True,
+    content_security_policy={
+        'default-src': ["'self'"],
+        'img-src': ["'self'", 'data:', 'https:', '*'],
+        'script-src': ["'self'", "'unsafe-inline'", 'https://cdn.jsdelivr.net', 'https://unpkg.com'],
+        'style-src': ["'self'", "'unsafe-inline'", 'https://cdn.replit.com'],
+        'connect-src': ["'self'", 'wss:', 'https:', '*'],
+        'font-src': ["'self'", 'data:'],
+        'frame-ancestors': ["'none'"],
+        'upgrade-insecure-requests': []
+    }
+)
+
+# Domain configuration middleware
+@app.before_request
+def redirect_to_domain():
+    if request.headers.get('X-Forwarded-Proto', 'http') == 'http':
+        url = request.url.replace('http://', 'https://', 1)
+        return redirect(url, code=301)
+
+    host = request.host.lower()
+    target_domain = 'saskatoongaragedoorexperts.ca'
+    
+    # Skip redirect for development environment
+    if 'replit' in host or 'localhost' in host:
+        return None
+        
+    if host != target_domain and host != f'www.{target_domain}':
+        return redirect(f'https://{target_domain}{request.full_path}', code=301)
+    return None
+
+# Routes
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -167,4 +212,5 @@ with app.app_context():
     db.create_all()
 
 if __name__ == '__main__':
-    socketio.run(app, host='0.0.0.0', port=5000)
+    port = int(os.environ.get('PORT', 5000))
+    socketio.run(app, host='0.0.0.0', port=port)
