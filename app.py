@@ -1,4 +1,5 @@
 import os
+import logging
 from flask import Flask, render_template, request, flash, redirect, url_for, abort
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase
@@ -7,6 +8,10 @@ from werkzeug.utils import secure_filename
 from flask_socketio import SocketIO, emit
 from flask_mail import Mail, Message
 
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
 class Base(DeclarativeBase):
     pass
 
@@ -14,11 +19,21 @@ db = SQLAlchemy(model_class=Base)
 app = Flask(__name__)
 
 app.secret_key = os.environ.get("FLASK_SECRET_KEY") or "saskatoon-garage-experts"
-app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
-app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
-    "pool_recycle": 300,
-    "pool_pre_ping": True,
-}
+
+# Configure database with SSL
+database_url = os.environ.get("DATABASE_URL")
+if database_url and database_url.startswith("postgresql://"):
+    app.config["SQLALCHEMY_DATABASE_URI"] = database_url
+    app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
+        "pool_recycle": 300,
+        "pool_pre_ping": True,
+        "connect_args": {
+            "sslmode": "require"
+        }
+    }
+    logger.info("PostgreSQL database configured with SSL")
+else:
+    logger.warning("DATABASE_URL not properly configured")
 
 # Mail configuration
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
@@ -28,24 +43,29 @@ app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
 app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
 app.config['MAIL_DEFAULT_SENDER'] = os.environ.get('MAIL_USERNAME')
 
+logger.info("Initializing database connection...")
 db.init_app(app)
-socketio = SocketIO(app)
+socketio = SocketIO(app, cors_allowed_origins="*")
 mail = Mail(app)
 
 @app.route('/')
 def index():
+    logger.info("Serving index page")
     return render_template('index.html')
 
 @app.route('/services')
 def services():
+    logger.info("Serving services page")
     return render_template('services.html')
 
 @app.route('/gallery')
 def gallery():
+    logger.info("Serving gallery page")
     return render_template('gallery.html')
 
 @app.route('/faq')
 def faq():
+    logger.info("Serving FAQ page")
     return render_template('faq.html')
 
 @app.route('/contact', methods=['GET', 'POST'])
@@ -72,6 +92,7 @@ def contact():
             # Save to database
             db.session.add(new_inquiry)
             db.session.commit()
+            logger.info(f"New contact inquiry saved from {email}")
 
             # Send email notification
             msg = Message(
@@ -91,6 +112,7 @@ Message:
 Submitted at: {datetime.utcnow()}
 """
             mail.send(msg)
+            logger.info("Admin notification email sent")
 
             # Send confirmation email to customer
             customer_msg = Message(
@@ -111,10 +133,12 @@ Best regards,
 Saskatoon Garage Door Experts Team
 """
             mail.send(customer_msg)
+            logger.info("Customer confirmation email sent")
 
             flash('Thank you for your inquiry! We will contact you soon.', 'success')
             return redirect(url_for('contact'))
         except Exception as e:
+            logger.error(f"Error processing contact form: {str(e)}")
             flash('An error occurred. Please try again.', 'error')
             
     return render_template('contact.html')
@@ -156,15 +180,31 @@ This message was sent through the live chat system.
 """
         mail.send(msg)
     except Exception as e:
-        print(f"Error sending email: {e}")
+        logger.error(f"Error sending chat email: {str(e)}")
     
     # Simulate support response after customer message
     support_response = "Thank you for your message. Our support team will be with you shortly. You can also reach us via WhatsApp at (474) 774-0269 or send us an SMS."
     emit('receive_message', {'message': support_response, 'is_support': True}, broadcast=True)
 
+@app.errorhandler(404)
+def not_found_error(error):
+    return render_template('404.html'), 404
+
+@app.errorhandler(500)
+def internal_error(error):
+    db.session.rollback()
+    return render_template('500.html'), 500
+
 with app.app_context():
-    import models
-    db.create_all()
+    try:
+        import models
+        logger.info("Creating database tables...")
+        db.create_all()
+        logger.info("Database tables created successfully")
+    except Exception as e:
+        logger.error(f"Error creating database tables: {str(e)}")
 
 if __name__ == '__main__':
-    socketio.run(app, host='0.0.0.0', port=5000)
+    port = int(os.environ.get('PORT', 5000))
+    logger.info(f"Starting application on port {port}")
+    socketio.run(app, host='0.0.0.0', port=port, debug=False)
