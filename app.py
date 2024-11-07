@@ -5,7 +5,6 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase
 from datetime import datetime, timedelta
 from werkzeug.utils import secure_filename
-from flask_socketio import SocketIO, emit
 from flask_mail import Mail, Message
 
 # Configure logging with more detailed format
@@ -54,7 +53,6 @@ app.config['MAIL_DEFAULT_SENDER'] = os.environ.get('MAIL_USERNAME')
 # Initialize extensions
 logger.info("Initializing database connection...")
 db.init_app(app)
-socketio = SocketIO(app, cors_allowed_origins="*", logger=True, engineio_logger=True)
 mail = Mail(app)
 
 @app.before_request
@@ -179,40 +177,6 @@ def blog_post(slug):
     post = BlogPost.query.filter_by(slug=slug).first_or_404()
     return render_template('blog/post.html', post=post)
 
-@app.route('/chat')
-def chat():
-    return render_template('chat.html')
-
-@socketio.on('send_message')
-def handle_message(data):
-    # Log incoming chat messages
-    logger.info("Received chat message")
-    
-    # Emit the message to all connected clients
-    emit('receive_message', {'message': data['message'], 'is_support': False}, broadcast=True)
-    
-    # Forward the chat message to support email
-    try:
-        msg = Message(
-            'New Chat Message',
-            recipients=[app.config['MAIL_USERNAME']]
-        )
-        msg.body = f"""
-New chat message received:
-
-Message: {data['message']}
-Time: {datetime.utcnow()}
-
-This message was sent through the live chat system.
-"""
-        mail.send(msg)
-    except Exception as e:
-        logger.error(f"Error sending chat email: {str(e)}")
-    
-    # Simulate support response after customer message
-    support_response = "Thank you for your message. Our support team will be with you shortly. You can also reach us via WhatsApp at (474) 774-0269 or send us an SMS."
-    emit('receive_message', {'message': support_response, 'is_support': True}, broadcast=True)
-
 @app.errorhandler(404)
 def not_found_error(error):
     return render_template('404.html'), 404
@@ -234,4 +198,4 @@ with app.app_context():
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     logger.info(f"Starting application on port {port}")
-    socketio.run(app, host='0.0.0.0', port=port, debug=False)
+    app.run(host='0.0.0.0', port=port, debug=False)
