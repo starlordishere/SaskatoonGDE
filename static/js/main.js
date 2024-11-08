@@ -33,22 +33,50 @@ function initializeFeatures() {
         console.warn('Error setting up form validation:', error);
     }
 
-    // Phone number formatting
+    // Phone number validation and formatting
     try {
         const phoneInput = document.getElementById('phone');
         if (phoneInput) {
             phoneInput.addEventListener('input', function(e) {
-                try {
-                    let x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
-                    e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
-                } catch (error) {
-                    console.warn('Error formatting phone number:', error);
+                // Strip all non-digit characters
+                let value = e.target.value.replace(/\D/g, '');
+                
+                // Truncate to 10 digits if longer
+                if (value.length > 10) {
+                    value = value.substring(0, 10);
+                }
+                
+                // Format the number as (XXX) XXX-XXXX
+                if (value.length > 0) {
+                    let formatted = '';
+                    if (value.length > 0) formatted += '(' + value.substring(0, Math.min(3, value.length));
+                    if (value.length > 3) formatted += ') ' + value.substring(3, Math.min(6, value.length));
+                    if (value.length > 6) formatted += '-' + value.substring(6, Math.min(10, value.length));
+                    e.target.value = formatted;
+                }
+
+                // Set validation state
+                if (value.length === 10) {
+                    this.setCustomValidity('');
+                } else {
+                    this.setCustomValidity('Please enter exactly 10 digits');
                 }
             });
-            console.log('Phone input formatting initialized');
+
+            // Add blur event to enforce format
+            phoneInput.addEventListener('blur', function() {
+                const digits = this.value.replace(/\D/g, '');
+                if (digits.length !== 10) {
+                    this.classList.add('is-invalid');
+                } else {
+                    this.classList.remove('is-invalid');
+                }
+            });
+
+            console.log('Phone input validation initialized');
         }
     } catch (error) {
-        console.warn('Error setting up phone formatting:', error);
+        console.warn('Error setting up phone validation:', error);
     }
 
     // Initialize Bootstrap tooltips if available
