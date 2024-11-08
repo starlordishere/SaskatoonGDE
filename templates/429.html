@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-5 text-center">
+    <h1 class="display-1 mb-4">429</h1>
+    <h2 class="mb-4">Too Many Requests</h2>
+    <p class="lead mb-5">{{ message }}</p>
+    <p class="mb-4">Please wait a while before trying again.</p>
+    <a href="{{ url_for('index') }}" class="btn btn-primary">
+        <i data-feather="home" class="me-2"></i>Return Home
+    </a>
+</div>
+{% endblock %}

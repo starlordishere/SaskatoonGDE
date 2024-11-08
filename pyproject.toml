@@ -15,4 +15,8 @@ dependencies = [
     "requests>=2.32.3",
     "sqlalchemy>=2.0.36",
     "werkzeug>=3.0.6",
+    "flask-wtf>=1.2.2",
+    "flask-limiter>=3.8.0",
+    "bleach>=6.2.0",
+    "tenacity>=9.0.0",
 ]

@@ -10,25 +10,29 @@
             <div class="card">
                 <div class="card-body">
                     <form method="POST" action="{{ url_for('contact') }}" class="needs-validation" novalidate>
+                        {{ csrf_token() }}
                         <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
+                            <input type="text" class="form-control" id="name" name="name" required 
+                                   pattern="[A-Za-z\s]{2,50}" title="Please enter a valid name (2-50 characters)">
                             <div class="invalid-feedback">
-                                Please provide your name.
+                                Please provide your name (2-50 characters, letters only).
                             </div>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
+                            <input type="email" class="form-control" id="email" name="email" required
+                                   pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
                             <div class="invalid-feedback">
                                 Please provide a valid email address.
                             </div>
                         </div>
                         <div class="mb-3">
                             <label for="phone" class="form-label">Phone</label>
-                            <input type="tel" class="form-control" id="phone" name="phone" required>
+                            <input type="tel" class="form-control" id="phone" name="phone" required
+                                   pattern="^\+?1?\d{9,15}$" title="Please enter a valid phone number">
                             <div class="invalid-feedback">
-                                Please provide your phone number.
+                                Please provide a valid phone number (9-15 digits).
                             </div>
                         </div>
                         <div class="mb-3">
@@ -53,12 +57,15 @@
                         </div>
                         <div class="mb-3">
                             <label for="message" class="form-label">Message</label>
-                            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                            <textarea class="form-control" id="message" name="message" rows="4" required
+                                      minlength="10" maxlength="1000"></textarea>
                             <div class="invalid-feedback">
-                                Please provide a message.
+                                Please provide a message (10-1000 characters).
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">
+                            <i data-feather="send" class="me-2"></i>Submit
+                        </button>
                     </form>
                 </div>
             </div>
@@ -113,18 +120,54 @@
 
 {% block extra_js %}
 <script>
-// Form validation
+// Enhanced form validation
 (function () {
     'use strict'
-    var forms = document.querySelectorAll('.needs-validation')
+
+    const forms = document.querySelectorAll('.needs-validation')
+    const submitButton = document.querySelector('button[type="submit"]')
+
     Array.prototype.slice.call(forms).forEach(function (form) {
+        // Validate on submit
         form.addEventListener('submit', function (event) {
             if (!form.checkValidity()) {
                 event.preventDefault()
                 event.stopPropagation()
+
+                // Find the first invalid field and focus it
+                const invalidField = form.querySelector(':invalid')
+                if (invalidField) {
+                    invalidField.focus()
+                }
+            } else {
+                // Disable submit button to prevent double submission
+                submitButton.disabled = true
+                submitButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Submitting...'
             }
             form.classList.add('was-validated')
         }, false)
+
+        // Real-time validation for specific fields
+        const emailInput = form.querySelector('#email')
+        const phoneInput = form.querySelector('#phone')
+        
+        emailInput?.addEventListener('input', function() {
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+            if (emailPattern.test(this.value)) {
+                this.setCustomValidity('')
+            } else {
+                this.setCustomValidity('Please enter a valid email address')
+            }
+        })
+
+        phoneInput?.addEventListener('input', function() {
+            const phonePattern = /^\+?1?\d{9,15}$/
+            if (phonePattern.test(this.value)) {
+                this.setCustomValidity('')
+            } else {
+                this.setCustomValidity('Please enter a valid phone number')
+            }
+        })
     })
 })()
 </script>
