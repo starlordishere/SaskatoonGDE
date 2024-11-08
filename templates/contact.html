@@ -28,11 +28,11 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="phone" class="form-label">Phone</label>
+                            <label for="phone" class="form-label">Phone (10 digits)</label>
                             <input type="tel" class="form-control" id="phone" name="phone" required
-                                   pattern="^\+?1?\d{9,15}$" title="Please enter a valid phone number">
+                                   pattern="[0-9]{10}" title="Please enter exactly 10 digits">
                             <div class="invalid-feedback">
-                                Please provide a valid phone number (9-15 digits).
+                                Please enter exactly 10 digits for your phone number.
                             </div>
                         </div>
                         <div class="mb-3">
@@ -156,11 +156,14 @@
         })
 
         phoneInput?.addEventListener('input', function() {
-            const phonePattern = /^\+?1?\d{9,15}$/
-            if (phonePattern.test(this.value)) {
+            // Remove any non-digit characters
+            this.value = this.value.replace(/\D/g, '')
+            
+            // Check if exactly 10 digits
+            if (this.value.length === 10) {
                 this.setCustomValidity('')
             } else {
-                this.setCustomValidity('Please enter a valid phone number')
+                this.setCustomValidity('Please enter exactly 10 digits')
             }
         })
     })

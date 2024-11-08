@@ -76,10 +76,11 @@ def sanitize_input(text):
     return bleach.clean(text, strip=True)
 
 def validate_phone(phone):
-    """Validate phone number format"""
+    """Validate phone number format to require exactly 10 digits"""
     import re
-    phone_pattern = re.compile(r'^\+?1?\d{9,15}$')
-    return bool(phone_pattern.match(phone))
+    # Remove any non-digit characters before validation
+    digits_only = ''.join(filter(str.isdigit, phone))
+    return len(digits_only) == 10
 
 def validate_email(email):
     """Validate email format"""
@@ -163,7 +164,7 @@ def contact():
 
             if not validate_phone(phone):
                 logger.warning(f"Invalid phone format from {request.remote_addr}: {phone}")
-                flash('Please enter a valid phone number.', 'danger')
+                flash('Please enter exactly 10 digits for the phone number.', 'danger')
                 return redirect(url_for('contact'))
 
             # Create new inquiry
