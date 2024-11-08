@@ -1,16 +1,132 @@
-[Previous content remains the same until line 44]
-                    <select class="form-select" id="service_type" name="service_type" required>
-                        <option value="">Select a service...</option>
-                        <option value="assessment">Service Call + Assessment ($35) - Free with any service</option>
-                        <option value="spring">Spring Replacement ($250-$420 + tax) - 5-year warranty</option>
-                        <option value="cable">Cable Repair ($300-$400 + tax) - 2-year warranty</option>
-                        <option value="seal">Retainer and Rubber Seal ($180-$220 + tax) - 1-year warranty</option>
-                        <option value="programming">Remote/Keypad Programming ($100-$150 + tax) - 30-day warranty</option>
-                        <option value="maintenance">Maintenance and Inspection ($100-$120 + tax) - 30-day warranty</option>
-                        <option value="conversion">WD to Spring System Conversion ($500 + tax) - 5-year spring warranty</option>
-                        <option value="track">Track Repair (Free assessment required) - 2-year warranty</option>
-                        <option value="roller">Roller Replacement (Free assessment required) - 2-year warranty</option>
-                        <option value="emergency">Emergency Service (Same rates apply 24/7) - Standard warranties apply</option>
-                    </select>
-                    <div class="form-text">All services include appropriate warranties and free assessment. Prices subject to applicable PST/GST.</div>
-[Rest of the file remains unchanged]
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="mb-4">Contact Us</h1>
+    <p class="lead mb-5">Get in touch with our garage door experts for professional service and support.</p>
+
+    <div class="row">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+            <div class="card">
+                <div class="card-body">
+                    <form method="POST" action="{{ url_for('contact') }}" class="needs-validation" novalidate>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                            <div class="invalid-feedback">
+                                Please provide your name.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid email address.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" required>
+                            <div class="invalid-feedback">
+                                Please provide your phone number.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="service_type" class="form-label">Service Type</label>
+                            <select class="form-select" id="service_type" name="service_type" required>
+                                <option value="">Select a service...</option>
+                                <option value="assessment">Service Call + Assessment ($35) - Free with any service</option>
+                                <option value="spring">Spring Replacement ($380-$400 + tax) - 5-year warranty</option>
+                                <option value="cable">Cable Repair ($220-$260 + tax) - 2-year warranty</option>
+                                <option value="seal">Retainer and Rubber Seal ($180-$220 + tax) - 1-year warranty</option>
+                                <option value="programming">Remote/Keypad Programming ($100-$150 + tax) - 30-day warranty</option>
+                                <option value="maintenance">Maintenance and Inspection ($100-$120 + tax) - 30-day warranty</option>
+                                <option value="conversion">WD to Spring System Conversion ($500 + tax) - 5-year spring warranty</option>
+                                <option value="track">Track Repair (Free assessment required) - 2-year warranty</option>
+                                <option value="roller">Roller Replacement (Free assessment required) - 2-year warranty</option>
+                                <option value="emergency">Emergency Service (Same rates apply 24/7) - Standard warranties apply</option>
+                            </select>
+                            <div class="form-text">All services include appropriate warranties and free assessment. Prices subject to applicable PST/GST.</div>
+                            <div class="invalid-feedback">
+                                Please select a service type.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                            <div class="invalid-feedback">
+                                Please provide a message.
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title"><i data-feather="clock" class="me-2"></i>Business Hours</h5>
+                    <p class="mb-0">
+                        Monday - Friday: 8:00 AM - 6:00 PM<br>
+                        Saturday: 10:00 AM - 6:00 PM<br>
+                        Sunday: 10:00 AM - 6:00 PM
+                    </p>
+                    <div class="alert alert-warning mt-3">
+                        <i data-feather="alert-circle" class="me-2"></i>
+                        24/7 Emergency Service Available
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title"><i data-feather="map-pin" class="me-2"></i>Service Area</h5>
+                    <p class="mb-2">Proudly serving Saskatoon and surrounding areas.</p>
+                    <div class="alert alert-info">
+                        <i data-feather="info" class="me-2"></i>
+                        $35 travel fee applies for locations outside Saskatoon
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><i data-feather="phone" class="me-2"></i>Direct Contact</h5>
+                    <p class="mb-0">
+                        <a href="tel:+14747740269" class="text-decoration-none">
+                            <i data-feather="phone" class="me-2"></i>(474) 774-0269
+                        </a><br>
+                        <a href="sms:+14747740269" class="text-decoration-none text-info">
+                            <i data-feather="message-square" class="me-2"></i>Send SMS
+                        </a><br>
+                        <a href="mailto:gdexperts111@gmail.com" class="text-decoration-none">
+                            <i data-feather="mail" class="me-2"></i>gdexperts111@gmail.com
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block extra_js %}
+<script>
+// Form validation
+(function () {
+    'use strict'
+    var forms = document.querySelectorAll('.needs-validation')
+    Array.prototype.slice.call(forms).forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+            }
+            form.classList.add('was-validated')
+        }, false)
+    })
+})()
+</script>
+{% endblock %}
+{% endblock %}
