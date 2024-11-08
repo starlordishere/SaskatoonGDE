@@ -1,25 +1,173 @@
-[Previous content remains the same until line 225]
-        <div class="alert alert-success mt-4">
-            <div class="d-flex align-items-center">
-                <i data-feather="check-circle" class="me-2"></i>
-                <div>
-                    <strong>Service Benefits:</strong><br>
-                    - Free assessment (value $35) included with any service booking<br>
-                    - No extra charges for weekends, holidays, and after-hours services<br>
-                    - Same rates apply 24/7 - We are open everyday!<br>
-                    - All prices subject to applicable taxes (PST/GST)<br>
-                    - Multiple payment options: Credit cards, Debit cards (Interac), E-transfers, and Cash
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="mb-4">Our Services</h1>
+    <p class="lead mb-5">Professional garage door services with comprehensive warranty coverage for your peace of mind.</p>
+
+    <!-- Spring Services -->
+    <section class="mb-5">
+        <h2 class="h3 mb-4">Spring Services</h2>
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="service-card p-4">
+                    <h3 class="h4">Spring Replacement</h3>
+                    <p>Professional spring replacement service with expert installation and testing.</p>
+                    <div class="pricing mb-3">
+                        <strong>Pricing:</strong>
+                        <ul class="list-unstyled">
+                            <li><i data-feather="check" class="text-success me-2"></i>Standard pair of torsion springs: $380-$400 + tax</li>
+                            <li><i data-feather="check" class="text-success me-2"></i>Single spring replacement: Starting at $260 + tax</li>
+                            <li><i data-feather="check" class="text-success me-2"></i>Multiple spring systems: $240 per spring + tax</li>
+                        </ul>
+                    </div>
+                    <div class="alert alert-info">
+                        <h6 class="alert-heading"><i data-feather="shield" class="me-2"></i>Warranty Coverage</h6>
+                        <ul class="list-unstyled mb-0">
+                            <li><i data-feather="check" class="text-success me-2"></i>5-year warranty on springs</li>
+                            <li><i data-feather="check" class="text-success me-2"></i>30-day service warranty</li>
+                            <li><i data-feather="check" class="text-success me-2"></i>Free adjustment within warranty period</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="text-center mt-5">
-            <p class="lead">Ready to get started?</p>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg px-4">Request Quote</a>
-                <a href="tel:+14747740269" class="btn btn-outline-primary btn-lg px-4">Call Now</a>
+    <!-- Cable Services -->
+    <section class="mb-5">
+        <h2 class="h3 mb-4">Cable Services</h2>
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="service-card p-4">
+                    <h3 class="h4">Cable Repair and Replacement</h3>
+                    <p>Expert cable repair and replacement service ensuring proper door balance and operation.</p>
+                    <div class="pricing mb-3">
+                        <strong>Pricing:</strong>
+                        <ul class="list-unstyled">
+                            <li><i data-feather="check" class="text-success me-2"></i>Cable replacement: $220-$260 + tax</li>
+                            <li><i data-feather="check" class="text-success me-2"></i>Includes both cables for proper balance</li>
+                        </ul>
+                    </div>
+                    <div class="alert alert-info">
+                        <h6 class="alert-heading"><i data-feather="shield" class="me-2"></i>Warranty Coverage</h6>
+                        <ul class="list-unstyled mb-0">
+                            <li><i data-feather="check" class="text-success me-2"></i>2-year warranty on cables</li>
+                            <li><i data-feather="check" class="text-success me-2"></i>30-day service warranty</li>
+                            <li><i data-feather="check" class="text-success me-2"></i>Free tension adjustment within warranty period</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opener Installation -->
+    <section class="mb-5">
+        <h2 class="h3 mb-4">Opener Installation</h2>
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="service-card p-4">
+                    <h3 class="h4">Garage Door Opener Installation</h3>
+                    <p>Professional installation of high-quality garage door openers.</p>
+                    <div class="pricing mb-3">
+                        <strong>Available Models:</strong>
+                        <ul class="list-unstyled">
+                            <li><i data-feather="check" class="text-success me-2"></i>Chamberlain B2405C (½hp): $700-$750 + tax</li>
+                            <li><i data-feather="check" class="text-success me-2"></i>Chamberlain B4505TC (¾hp): $750-$780 + tax</li>
+                        </ul>
+                    </div>
+                    <div class="alert alert-info">
+                        <h6 class="alert-heading"><i data-feather="shield" class="me-2"></i>Warranty Coverage</h6>
+                        <ul class="list-unstyled mb-0">
+                            <li><i data-feather="check" class="text-success me-2"></i>5-year warranty on motor</li>
+                            <li><i data-feather="check" class="text-success me-2"></i>1-year warranty on parts</li>
+                            <li><i data-feather="check" class="text-success me-2"></i>30-day installation warranty</li>
+                            <li><i data-feather="check" class="text-success me-2"></i>Free programming and adjustment within warranty period</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Maintenance Services -->
+    <section class="mb-5">
+        <h2 class="h3 mb-4">Maintenance Services</h2>
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="service-card p-4">
+                    <h3 class="h4">Maintenance and Tune-up</h3>
+                    <p>Comprehensive maintenance service to keep your garage door operating smoothly.</p>
+                    <div class="pricing mb-3">
+                        <strong>Pricing:</strong>
+                        <ul class="list-unstyled">
+                            <li><i data-feather="check" class="text-success me-2"></i>General maintenance: $100-$120 + tax</li>
+                            <li><i data-feather="check" class="text-success me-2"></i>Specific adjustments: $150 each + tax</li>
+                        </ul>
+                    </div>
+                    <div class="alert alert-info">
+                        <h6 class="alert-heading"><i data-feather="shield" class="me-2"></i>Warranty Coverage</h6>
+                        <ul class="list-unstyled mb-0">
+                            <li><i data-feather="check" class="text-success me-2"></i>30-day warranty on maintenance service</li>
+                            <li><i data-feather="check" class="text-success me-2"></i>Free follow-up adjustment within warranty period</li>
+                            <li><i data-feather="check" class="text-success me-2"></i>Extended component life through regular maintenance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- System Conversion -->
+    <section class="mb-5">
+        <h2 class="h3 mb-4">System Conversion</h2>
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="service-card p-4">
+                    <h3 class="h4">WD to Regular Spring System Conversion</h3>
+                    <p>Professional conversion from Wayne Dalton to standard torsion spring system.</p>
+                    <div class="pricing mb-3">
+                        <strong>Pricing:</strong>
+                        <ul class="list-unstyled">
+                            <li><i data-feather="check" class="text-success me-2"></i>Complete conversion: $500 + tax</li>
+                        </ul>
+                    </div>
+                    <div class="alert alert-info">
+                        <h6 class="alert-heading"><i data-feather="shield" class="me-2"></i>Warranty Coverage</h6>
+                        <ul class="list-unstyled mb-0">
+                            <li><i data-feather="check" class="text-success me-2"></i>5-year warranty on springs</li>
+                            <li><i data-feather="check" class="text-success me-2"></i>2-year warranty on hardware</li>
+                            <li><i data-feather="check" class="text-success me-2"></i>30-day installation warranty</li>
+                            <li><i data-feather="check" class="text-success me-2"></i>Free adjustment within warranty period</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Benefits -->
+    <div class="alert alert-success mt-4">
+        <div class="d-flex align-items-center">
+            <i data-feather="check-circle" class="me-2"></i>
+            <div>
+                <strong>Service Benefits:</strong><br>
+                - Free assessment (value $35) included with any service booking<br>
+                - No extra charges for weekends, holidays, and after-hours services<br>
+                - Same rates apply 24/7 - We are open everyday!<br>
+                - All prices subject to applicable taxes (PST/GST)<br>
+                - Multiple payment options: Credit cards, Debit cards (Interac), E-transfers, and Cash
             </div>
         </div>
     </div>
-</section>
+
+    <div class="text-center mt-5">
+        <p class="lead">Ready to get started?</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+            <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg px-4">Request Quote</a>
+            <a href="tel:+14747740269" class="btn btn-outline-primary btn-lg px-4">Call Now</a>
+        </div>
+    </div>
+</div>
 {% endblock %}
