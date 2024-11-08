@@ -1,16 +1,147 @@
-[Previous content remains unchanged until line 43]
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-6">
+            <h2>Contact Us</h2>
+            <p class="lead">Get in touch with us for all your garage door needs. Call or text us for a free quote and additional information.</p>
+            
+            <div class="alert alert-success mb-4">
+                <i data-feather="info" class="me-2"></i>
+                Free assessment ($35 value) included with any service booking!
+            </div>
+
+            <!-- Quick Contact Options -->
+            <div class="d-flex gap-3 mb-4">
+                <a href="tel:+14747740269" class="btn btn-outline-primary">
+                    <i data-feather="phone" class="me-2"></i>Call Us
+                </a>
+                <a href="sms:+14747740269" class="btn btn-outline-info">
+                    <i data-feather="message-square" class="me-2"></i>Send SMS
+                </a>
+            </div>
+            
+            <form method="POST" action="{{ url_for('contact') }}" class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="service_type" class="form-label">Service Type</label>
                     <select class="form-select" id="service_type" name="service_type" required>
                         <option value="">Select a service...</option>
                         <option value="assessment">Service Call + Assessment ($35) - Free with any service</option>
-                        <option value="spring">Spring Replacement ($250-$420 + tax) - 3-year warranty</option>
-                        <option value="cable">Cable Repair ($300-$400 + tax) - 2-year warranty</option>
-                        <option value="seal">Weather Sealing ($180-$220 + tax) - 1-year warranty</option>
-                        <option value="programming">Remote/Keypad Programming ($100-$150 + tax) - 90-day warranty</option>
-                        <option value="maintenance">Maintenance and Inspection ($100-$120 + tax) - 30-day warranty</option>
-                        <option value="conversion">WD to Spring System Conversion ($500 + tax) - 3-year warranty</option>
-                        <option value="track">Track Repair (Free assessment required) - 1-year warranty</option>
-                        <option value="roller">Roller Replacement (Free assessment required) - 1-year warranty</option>
-                        <option value="emergency">Emergency Service (Same rates apply 24/7) - Standard warranty applies</option>
+                        <option value="spring">Spring Replacement ($250-$420 + tax)</option>
+                        <option value="cable">Cable Repair ($300-$400 + tax)</option>
+                        <option value="seal">Retainer and Rubber Seal ($180-$220 + tax)</option>
+                        <option value="programming">Remote/Keypad Programming ($100-$150 + tax)</option>
+                        <option value="maintenance">Maintenance and Inspection ($100-$120 + tax)</option>
+                        <option value="conversion">WD to Spring System Conversion ($500 + tax)</option>
+                        <option value="track">Track Repair (Free assessment required)</option>
+                        <option value="roller">Roller Replacement (Free assessment required)</option>
+                        <option value="emergency">Emergency Service (Same rates apply 24/7)</option>
                     </select>
-                    <div class="form-text">All prices subject to applicable PST/GST. Free assessment included with service. All services include comprehensive warranty coverage.</div>
-[Rest of the file remains unchanged]
+                    <div class="form-text">All prices subject to applicable PST/GST. Free assessment included with service.</div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+        
+        <div class="col-lg-6">
+            <div class="card mt-4 mt-lg-0">
+                <div class="card-body">
+                    <h5 class="card-title">Business Information</h5>
+                    <div class="mb-4">
+                        <h6><i data-feather="clock" class="me-2"></i>Operating Hours</h6>
+                        <ul class="list-unstyled ps-4">
+                            <li>Monday - Friday: 8:00 AM - 6:00 PM</li>
+                            <li>Saturday: 9:00 AM - 6:00 PM</li>
+                            <li>Sunday: 10:00 AM - 6:00 PM</li>
+                            <li class="text-warning mt-2">24/7 Emergency Service Available</li>
+                        </ul>
+                        <div class="alert alert-success mt-2">
+                            <i data-feather="check-circle" class="me-2"></i>
+                            No extra charges for weekends, holidays, and after-hours services. We are open everyday!
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <h6><i data-feather="credit-card" class="me-2"></i>Payment Methods</h6>
+                        <ul class="list-unstyled ps-4">
+                            <li>Credit Cards (Visa, Mastercard, AMEX)</li>
+                            <li>Debit Cards (Interac)</li>
+                            <li>E-transfers</li>
+                            <li>Cash</li>
+                        </ul>
+                    </div>
+                    
+                    <h5 class="mb-3">Contact Options</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <i data-feather="map-pin" class="me-2"></i>
+                            Saskatoon and surrounding areas
+                            <div class="text-info small ms-4">$35 travel fee applies outside Saskatoon</div>
+                        </li>
+                        <li class="mb-3">
+                            <a href="tel:+14747740269" class="text-decoration-none d-flex align-items-center">
+                                <i data-feather="phone" class="me-2"></i>
+                                (474) 774-0269
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="sms:+14747740269" class="text-decoration-none text-info d-flex align-items-center">
+                                <i data-feather="message-square" class="me-2"></i>
+                                Send SMS
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="mailto:gdexperts111@gmail.com" class="text-decoration-none d-flex align-items-center">
+                                <i data-feather="mail" class="me-2"></i>
+                                gdexperts111@gmail.com
+                            </a>
+                        </li>
+                    </ul>
+                    
+                    <div class="alert alert-info mt-4">
+                        <h5 class="alert-heading">Free Assessment Offer!</h5>
+                        <p class="mb-0">Book any service and receive a comprehensive garage door assessment (valued at $35) completely free. Our expert technicians will thoroughly inspect your system and provide detailed recommendations.</p>
+                    </div>
+                    
+                    <h5 class="mt-4">Available Services</h5>
+                    <p>Our skilled and professional experts provide quality services with attention to detail:</p>
+                    <ul class="list-unstyled">
+                        <li><i data-feather="check" class="text-success me-2"></i>Spring Replacement</li>
+                        <li><i data-feather="check" class="text-success me-2"></i>Cable Repair</li>
+                        <li><i data-feather="check" class="text-success me-2"></i>Maintenance Services</li>
+                        <li><i data-feather="check" class="text-success me-2"></i>System Conversions</li>
+                        <li><i data-feather="check" class="text-success me-2"></i>Emergency Repairs</li>
+                    </ul>
+
+                    <div class="alert alert-warning mt-4">
+                        <i data-feather="alert-circle" class="me-2"></i>
+                        24/7 Emergency service available - Same rates apply for after-hours service!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
