@@ -1,5 +1,5 @@
-from app import db
 from datetime import datetime
+from database import db
 
 class ContactInquiry(db.Model):
     id = db.Column(db.Integer, primary_key=True)

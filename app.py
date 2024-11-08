@@ -1,11 +1,10 @@
 import os
 import logging
 from flask import Flask, render_template, request, flash, redirect, url_for, abort
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.orm import DeclarativeBase
 from datetime import datetime, timedelta
 from werkzeug.utils import secure_filename
 from flask_mail import Mail, Message
+from database import db
 
 # Configure logging with more detailed format
 logging.basicConfig(
@@ -14,10 +13,6 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-class Base(DeclarativeBase):
-    pass
-
-db = SQLAlchemy(model_class=Base)
 app = Flask(__name__)
 
 # Enhanced security configurations
@@ -59,7 +54,6 @@ mail = Mail(app)
 def before_request():
     # Log each request for debugging
     logger.info(f"Incoming request: {request.method} {request.path}")
-    # Remove HTTPS redirect since Replit handles HTTPS automatically
     return None
 
 @app.after_request

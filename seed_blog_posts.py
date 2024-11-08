@@ -1,5 +1,23 @@
-from app import app, db
+from database import db
 from models import BlogPost
+from flask import Flask
+import os
+
+app = Flask(__name__)
+
+# Configure database with SSL
+database_url = os.environ.get("DATABASE_URL")
+if database_url:
+    app.config["SQLALCHEMY_DATABASE_URI"] = database_url
+    app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
+        "pool_recycle": 300,
+        "pool_pre_ping": True,
+        "connect_args": {
+            "sslmode": "require"
+        }
+    }
+
+db.init_app(app)
 
 posts = [
     {
