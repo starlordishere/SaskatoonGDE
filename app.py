@@ -88,28 +88,15 @@ def validate_email_template(msg):
     wait=wait_exponential(multiplier=1, min=4, max=10)
 )
 def send_email_with_retry(msg):
-    """Send email with retry mechanism"""
-    if not app.config['MAIL_USERNAME'] or not app.config['MAIL_PASSWORD']:
-        logger.error("Email credentials are not configured")
-        raise ValueError("Email credentials are not configured. Please check MAIL_USERNAME and MAIL_PASSWORD environment variables.")
-
     try:
-        # Validate email template
         validate_email_template(msg)
-        
-        # Add some retry context to the email
-        retry_count = getattr(send_email_with_retry, 'retry', 0) + 1
-        setattr(send_email_with_retry, 'retry', retry_count)
-        
         with app.app_context():
             mail.send(msg)
             logger.info(f"Email sent successfully to {msg.recipients}")
-            # Reset retry count on success
-            setattr(send_email_with_retry, 'retry', 0)
     except Exception as e:
-        logger.error(f"Failed to send email (attempt {getattr(send_email_with_retry, 'retry', 1)}): {str(e)}")
+        logger.error(f"Failed to send email: {str(e)}")
         if "Username and Password not accepted" in str(e):
-            logger.error("Authentication failed. Please check your Gmail credentials and ensure you're using an App Password.")
+            logger.error("Authentication failed. Please check your Gmail credentials.")
         raise
 
 @app.route('/')
@@ -205,8 +192,6 @@ Message:
 
 Submitted at: {datetime.utcnow()}
 """
-                # Send admin notification with retry
-                send_email_with_retry(admin_msg)
 
                 # Prepare customer confirmation email
                 customer_msg = Message(
@@ -226,10 +211,17 @@ Your message:
 Best regards,
 Saskatoon Garage Door Experts Team
 """
-                # Send customer confirmation with retry
-                send_email_with_retry(customer_msg)
 
-                flash('Thank you for your inquiry! We will contact you soon.', 'success')
+                try:
+                    # Send admin notification
+                    send_email_with_retry(admin_msg)
+                    # Send customer confirmation
+                    send_email_with_retry(customer_msg)
+                    flash('Thank you for your inquiry! We will contact you soon.', 'success')
+                except Exception as e:
+                    logger.error(f"Error sending email: {str(e)}")
+                    flash('An error occurred while processing your request. Please try again.', 'danger')
+
                 return redirect(url_for('contact'))
 
             except sqlalchemy.exc.SQLAlchemyError as e:
