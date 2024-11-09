@@ -26,9 +26,13 @@ app.config['SECRET_KEY'] = os.environ.get("FLASK_SECRET_KEY", "saskatoon-garage-
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USE_SSL'] = False
 app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
 app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
 app.config['MAIL_DEFAULT_SENDER'] = os.environ.get('MAIL_USERNAME')
+app.config['MAIL_MAX_EMAILS'] = 10
+app.config['MAIL_SUPPRESS_SEND'] = False
+app.config['MAIL_ASCII_ATTACHMENTS'] = False
 app.config['WTF_CSRF_ENABLED'] = True
 
 # Initialize extensions
@@ -69,17 +73,43 @@ def validate_email(email):
     email_pattern = re.compile(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')
     return bool(email_pattern.match(email))
 
+def validate_email_template(msg):
+    """Validate email template before sending"""
+    if not msg.subject:
+        raise ValueError("Email subject cannot be empty")
+    if not msg.recipients:
+        raise ValueError("Email must have at least one recipient")
+    if not msg.body and not msg.html:
+        raise ValueError("Email must have either body or HTML content")
+    return True
+
 @retry(
     stop=stop_after_attempt(3),
     wait=wait_exponential(multiplier=1, min=4, max=10)
 )
 def send_email_with_retry(msg):
     """Send email with retry mechanism"""
+    if not app.config['MAIL_USERNAME'] or not app.config['MAIL_PASSWORD']:
+        logger.error("Email credentials are not configured")
+        raise ValueError("Email credentials are not configured. Please check MAIL_USERNAME and MAIL_PASSWORD environment variables.")
+
     try:
-        mail.send(msg)
-        logger.info(f"Email sent successfully to {msg.recipients}")
+        # Validate email template
+        validate_email_template(msg)
+        
+        # Add some retry context to the email
+        retry_count = getattr(send_email_with_retry, 'retry', 0) + 1
+        setattr(send_email_with_retry, 'retry', retry_count)
+        
+        with app.app_context():
+            mail.send(msg)
+            logger.info(f"Email sent successfully to {msg.recipients}")
+            # Reset retry count on success
+            setattr(send_email_with_retry, 'retry', 0)
     except Exception as e:
-        logger.error(f"Failed to send email: {str(e)}")
+        logger.error(f"Failed to send email (attempt {getattr(send_email_with_retry, 'retry', 1)}): {str(e)}")
+        if "Username and Password not accepted" in str(e):
+            logger.error("Authentication failed. Please check your Gmail credentials and ensure you're using an App Password.")
         raise
 
 @app.route('/')
@@ -136,8 +166,7 @@ def contact():
                 return redirect(url_for('contact'))
 
             # Strict phone number validation
-            digits_only = ''.join(filter(str.isdigit, phone))
-            if len(digits_only) != 10:
+            if not validate_phone(phone):
                 logger.warning(f"Invalid phone format from {request.remote_addr}: {phone}")
                 flash('Please enter exactly 10 digits for the phone number.', 'danger')
                 return redirect(url_for('contact'))
@@ -189,7 +218,7 @@ Dear {name},
 
 Thank you for contacting Saskatoon Garage Door Experts. We have received your inquiry about {service_type} service.
 
-We will review your request and get back to you shortly.
+We will review your request and get back to you shortly. All our services include a comprehensive 1-year warranty on parts and labor.
 
 Your message:
 {message}
