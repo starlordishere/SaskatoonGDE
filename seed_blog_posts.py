@@ -3,22 +3,24 @@ from models import BlogPost
 from flask import Flask
 import os
 
+# Create a Flask app instance for database operations
 app = Flask(__name__)
 
-# Configure database with SSL
+# Set up database connection with SSL for security
 database_url = os.environ.get("DATABASE_URL")
 if database_url:
     app.config["SQLALCHEMY_DATABASE_URI"] = database_url
     app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
-        "pool_recycle": 300,
-        "pool_pre_ping": True,
+        "pool_recycle": 300,  # Reconnect after 5 minutes of inactivity
+        "pool_pre_ping": True,  # Check connection before using
         "connect_args": {
-            "sslmode": "require"
+            "sslmode": "require"  # Always use SSL for security
         }
     }
 
 db.init_app(app)
 
+# Our initial blog posts - great content for SEO and customer education!
 posts = [
     {
         "title": "Understanding Garage Door Springs: A Complete Guide",
@@ -193,11 +195,15 @@ posts = [
 ]
 
 def seed_blog_posts():
+    """
+    Populate our blog with initial content.
+    This gives customers valuable information about garage door maintenance and repair.
+    """
     with app.app_context():
-        # Clear existing posts
+        # Start fresh - remove any existing posts
         BlogPost.query.delete()
         
-        # Add new posts
+        # Add our new, informative posts
         for post_data in posts:
             post = BlogPost(**post_data)
             db.session.add(post)
