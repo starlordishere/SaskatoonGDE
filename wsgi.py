@@ -11,6 +11,6 @@ if __name__ == "__main__":
     app.config['SERVER_NAME'] = os.environ.get('SERVER_NAME')
     app.config['PREFERRED_URL_SCHEME'] = 'https'
     
-    # Run the application
+    # Run the application on port 5000
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
