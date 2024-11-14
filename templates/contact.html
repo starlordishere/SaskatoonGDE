@@ -1,4 +1,34 @@
-[Previous content remains the same until the service_type select options]
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="mb-4">Contact Us</h1>
+    <p class="lead mb-5">Get in touch with us for professional garage door services in Saskatoon.</p>
+
+    <div class="row">
+        <div class="col-md-7 mb-4 mb-md-0">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">Send us a message</h5>
+                    <form method="POST" class="needs-validation" novalidate>
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                            <div class="invalid-feedback">Please provide your name.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                            <div class="invalid-feedback">Please provide a valid email address.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" placeholder="(XXX) XXX-XXXX" required>
+                            <div class="invalid-feedback">Please enter exactly 10 digits.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="service_type" class="form-label">Service Type</label>
                             <select class="form-select" id="service_type" name="service_type" required>
                                 <option value="">Select a service...</option>
                                 <option value="assessment">Service Call + Assessment ($35) - Free with any service</option>
@@ -14,4 +44,75 @@
                                 <option value="roller">Roller Replacement (Free assessment required) - 1-year warranty</option>
                                 <option value="emergency">Emergency Service (Same rates apply 24/7) - 1-year warranty</option>
                             </select>
-[Rest of the file remains unchanged]
+                            <div class="invalid-feedback">Please select a service type.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                            <div class="invalid-feedback">Please provide a message.</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Contact Information</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-3">
+                            <i data-feather="phone" class="me-2"></i>
+                            <a href="tel:+14747740269" class="text-decoration-none">(474) 774-0269</a>
+                        </li>
+                        <li class="mb-3">
+                            <i data-feather="mail" class="me-2"></i>
+                            <a href="mailto:gdexperts111@gmail.com" class="text-decoration-none">gdexperts111@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Business Hours</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2">Monday - Friday: 8:00 AM - 6:00 PM</li>
+                        <li class="mb-2">Saturday - Sunday: 10:00 AM - 6:00 PM</li>
+                        <li class="text-warning">
+                            <i data-feather="alert-circle" class="me-1"></i>
+                            24/7 Emergency Service Available
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Service Area</h5>
+                    <p class="mb-2">Proudly serving Saskatoon and surrounding areas.</p>
+                    <p class="mb-0 text-info">
+                        <i data-feather="info" class="me-1"></i>
+                        $35 travel fee applies outside of Saskatoon
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="alert alert-success mt-4">
+        <div class="d-flex align-items-center">
+            <i data-feather="check-circle" class="me-2"></i>
+            <div>
+                <strong>Service Benefits:</strong><br>
+                - Free assessment (value $35) included with any service booking<br>
+                - No extra charges for weekends, holidays, and after-hours services<br>
+                - Same rates apply 24/7 - We are open everyday!<br>
+                - All prices subject to applicable taxes (PST/GST)<br>
+                - Multiple payment options: Credit cards, Debit cards (Interac), E-transfers, and Cash<br>
+                - 1-year comprehensive warranty on all services
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
