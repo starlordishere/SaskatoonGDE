@@ -1,24 +1,11 @@
-from database import db
-from models import BlogPost
-from flask import Flask
+import json
+from pathlib import Path
 import os
 
-# Create a Flask app instance for database operations
-app = Flask(__name__)
-
-# Set up database connection with SSL for security
-database_url = os.environ.get("DATABASE_URL")
-if database_url:
-    app.config["SQLALCHEMY_DATABASE_URI"] = database_url
-    app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
-        "pool_recycle": 300,  # Reconnect after 5 minutes of inactivity
-        "pool_pre_ping": True,  # Check connection before using
-        "connect_args": {
-            "sslmode": "require"  # Always use SSL for security
-        }
-    }
-
-db.init_app(app)
+# Create data directory if it doesn't exist
+data_dir = Path('data')
+data_dir.mkdir(exist_ok=True)
+blog_file = data_dir / 'blog_posts.json'
 
 # Our initial blog posts - great content for SEO and customer education!
 posts = [
@@ -63,7 +50,9 @@ posts = [
 <strong>Professional Tip:</strong> Annual maintenance by trained professionals can help identify spring issues early and prevent costly repairs or accidents.
 </div>
 """,
-        "image_url": "https://placehold.co/600x400?text=Garage+Springs"
+        "image_url": "https://placehold.co/600x400?text=Garage+Springs",
+        "created_at": "2024-11-15T10:00:00",
+        "updated_at": "2024-11-15T10:00:00"
     },
     {
         "title": "Essential Guide to Garage Door Cables",
@@ -99,98 +88,9 @@ posts = [
 <strong>Maintenance Tip:</strong> Regular professional inspections can identify cable issues before they become serious problems.
 </div>
 """,
-        "image_url": "https://placehold.co/600x400?text=Door+Cables"
-    },
-    {
-        "title": "Weather Sealing and Protection Guide",
-        "slug": "weather-sealing-guide",
-        "summary": "Learn about the importance of proper weather sealing for your garage door.",
-        "content": """
-<h2>Weather Sealing Your Garage Door</h2>
-
-<p>The weatherstripping bottom seal is crucial for protecting your garage from external elements. It creates an effective barrier between your garage door and the floor, preventing various issues.</p>
-
-<h3>Functions of Weather Sealing</h3>
-<ul>
-    <li>Keeps out drafts, water, and dirt</li>
-    <li>Prevents pest intrusion</li>
-    <li>Maintains garage insulation</li>
-    <li>Protects against seasonal weather</li>
-</ul>
-
-<h3>Signs of Seal Deterioration</h3>
-<ul>
-    <li><strong>Visible Damage:</strong> Worn, cracked, or broken seals</li>
-    <li><strong>Operational Issues:</strong> Difficulty in door closure</li>
-    <li><strong>Environmental Problems:</strong> Draft, water leaks, or pest intrusion</li>
-    <li><strong>Seasonal Issues:</strong> Poor insulation during extreme weather</li>
-</ul>
-
-<div class="alert alert-info">
-<strong>Benefits of Replacement:</strong>
-<ul>
-    <li>Improved energy efficiency</li>
-    <li>Better protection against elements</li>
-    <li>Enhanced pest control</li>
-    <li>Extended garage door life</li>
-</ul>
-</div>
-
-<h3>Professional Installation</h3>
-<p>While seal replacement might seem simple, professional installation ensures:</p>
-<ul>
-    <li>Proper seal selection and fitting</li>
-    <li>Correct installation technique</li>
-    <li>Maximum effectiveness</li>
-    <li>Long-lasting results</li>
-</ul>
-""",
-        "image_url": "https://placehold.co/600x400?text=Weather+Sealing"
-    },
-    {
-        "title": "WD to Torsion Spring System Conversion Benefits",
-        "slug": "system-conversion-guide",
-        "summary": "Understanding the advantages of converting from Wayne Dalton to Torsion Spring system.",
-        "content": """
-<h2>System Conversion Benefits</h2>
-
-<p>Converting from a Wayne Dalton system to a Torsion Spring system offers several significant advantages for homeowners. This comprehensive upgrade improves both safety and functionality.</p>
-
-<h3>Advantages of Torsion Spring System</h3>
-<ul>
-    <li>Visible spring condition monitoring</li>
-    <li>Enhanced safety features</li>
-    <li>Improved durability</li>
-    <li>Better balance and operation</li>
-    <li>Extended opener lifespan</li>
-</ul>
-
-<h3>Conversion Process</h3>
-<p>Professional conversion includes:</p>
-<ul>
-    <li>Installation of new cable drums</li>
-    <li>Shaft installation</li>
-    <li>Shaft anchor mounting</li>
-    <li>Torsion spring setup</li>
-</ul>
-
-<div class="alert alert-warning">
-<strong>Important Note:</strong> Wayne Dalton systems hide springs inside a hollow tube, making it impossible to visually inspect for damage. This can lead to unexpected failures and potentially costly repairs.
-</div>
-
-<h3>Long-term Benefits</h3>
-<ul>
-    <li>Easier maintenance and inspection</li>
-    <li>More reliable operation</li>
-    <li>Reduced risk of sudden failure</li>
-    <li>Better overall door performance</li>
-</ul>
-
-<div class="alert alert-info">
-<strong>Professional Recommendation:</strong> Converting to a torsion spring system is a worthwhile investment that can prevent costly repairs and extend the life of your garage door system.
-</div>
-""",
-        "image_url": "https://placehold.co/600x400?text=System+Conversion"
+        "image_url": "https://placehold.co/600x400?text=Door+Cables",
+        "created_at": "2024-11-15T11:00:00",
+        "updated_at": "2024-11-15T11:00:00"
     }
 ]
 
@@ -199,17 +99,10 @@ def seed_blog_posts():
     Populate our blog with initial content.
     This gives customers valuable information about garage door maintenance and repair.
     """
-    with app.app_context():
-        # Start fresh - remove any existing posts
-        BlogPost.query.delete()
-        
-        # Add our new, informative posts
-        for post_data in posts:
-            post = BlogPost(**post_data)
-            db.session.add(post)
-        
-        db.session.commit()
-        print("Blog posts seeded successfully!")
+    # Save our posts to JSON file
+    with open(blog_file, 'w') as f:
+        json.dump(posts, f, indent=2)
+    print("Blog posts seeded successfully!")
 
 if __name__ == "__main__":
     seed_blog_posts()
