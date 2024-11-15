@@ -1,0 +1,20 @@
+[
+    {
+        "title": "Understanding Garage Door Springs: A Complete Guide",
+        "slug": "garage-door-springs-guide",
+        "summary": "Learn everything about garage door springs, their importance, and when they need replacement.",
+        "content": "<h2>The Importance of Garage Door Springs</h2><p>Garage door springs are an essential component of your garage door system, responsible for safe and proper lifting and lowering of the door. Torsion springs, located above the garage door on a metal shaft, work by storing mechanical energy when the door is closed through twisting, and releasing this energy to help lift the door when opening.</p><div class=\"alert alert-danger\"><strong>Safety Warning:</strong> Never attempt to fix garage door springs yourself. Due to the high tension in the springs, spring repairs should only be handled by professional technicians to avoid dangerous hazards. Springs have the most tension when the door is lowered.</div><h3>Types of Spring Systems</h3><ul><li><strong>Torsion Springs:</strong> Located above the door, visible and easier to inspect</li><li><strong>Wayne Dalton System:</strong> Springs located inside a hollow tube, making inspection more difficult</li></ul><h3>Warning Signs for Replacement</h3><p>Watch for these critical signs that indicate your springs need professional attention:</p><ul><li>Door becomes unusually heavy and difficult to open manually</li><li>Door opens partially or very slowly</li><li>Door drops quickly when partially lifted</li><li>Springs show visible rust or corrosion</li><li>Loud bang sounds due to springs unwinding quickly</li></ul>",
+        "image_url": "https://placehold.co/600x400?text=Garage+Springs",
+        "created_at": "2024-11-15T10:00:00",
+        "updated_at": "2024-11-15T10:00:00"
+    },
+    {
+        "title": "Essential Guide to Garage Door Cables",
+        "slug": "garage-door-cables-guide",
+        "summary": "Understanding garage door cables, their importance, and common issues.",
+        "content": "<h2>Understanding Garage Door Cables</h2><p>Garage door cables are crucial components made from strong, twisted steel wire for durability and strength. Working with cable drums on either side of the door, they maintain even tension, ensuring proper and safe operation of your garage door.</p><h3>Critical Warning Signs</h3><ul><li><strong>Fraying or Rust:</strong> Signs of wear that can lead to cable failure</li><li><strong>Slack in Cables:</strong> Causing door imbalance and improper operation</li><li><strong>Uneven Movement:</strong> Door shaking or moving too fast</li><li><strong>Misalignment:</strong> Door not opening or closing properly</li></ul>",
+        "image_url": "https://placehold.co/600x400?text=Door+Cables",
+        "created_at": "2024-11-15T11:00:00",
+        "updated_at": "2024-11-15T11:00:00"
+    }
+]
