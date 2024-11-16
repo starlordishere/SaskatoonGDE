@@ -11,324 +11,349 @@ blog_file = data_dir / 'blog_posts.json'
 # Our initial blog posts - great content for SEO and customer education!
 posts = [
     {
-        "title": "Seasonal Garage Door Maintenance: Winter Care Guide",
-        "slug": "winter-care-guide",
-        "summary": "Essential maintenance tips and precautions to keep your garage door operating smoothly during harsh winter months.",
+        "title": "Energy Efficiency Tips for Your Garage Door",
+        "slug": "energy-efficiency-tips",
+        "summary": "Expert advice on improving your garage door's energy efficiency and reducing heating/cooling costs through proper insulation and maintenance.",
         "content": """
-<h2>Winter Care for Your Garage Door</h2>
+<h2>Maximizing Your Garage Door's Energy Efficiency</h2>
 
-<p>Winter in Saskatoon can be particularly harsh on garage doors. Proper maintenance and preparation are essential to ensure reliable operation throughout the cold season.</p>
+<p>An energy-efficient garage door is crucial for maintaining comfortable temperatures and reducing energy costs, especially in Saskatoon's extreme weather conditions.</p>
 
-<div class="alert alert-warning">
-<strong>Safety First:</strong> Never attempt to force open a frozen garage door as this can cause serious damage to springs, cables, and other components, potentially creating dangerous situations.
+<div class="alert alert-info">
+<strong>Energy Saving Fact:</strong> An insulated garage door can reduce energy loss by up to 71% compared to non-insulated doors, significantly impacting your home's overall energy efficiency.
 </div>
 
-<h3>Pre-Winter Maintenance Checklist</h3>
+<h3>Key Components of Energy Efficiency</h3>
 <ul>
+    <li><strong>Insulation:</strong>
+        <ul>
+            <li>R-value considerations</li>
+            <li>Multi-layer construction</li>
+            <li>Thermal breaks</li>
+            <li>Weather-resistant materials</li>
+        </ul>
+    </li>
     <li><strong>Weather Sealing:</strong>
         <ul>
-            <li>Check and replace worn weather stripping</li>
-            <li>Inspect bottom seal condition</li>
-            <li>Verify side and top seal integrity</li>
-            <li>Address any visible gaps</li>
-        </ul>
-    </li>
-    <li><strong>Hardware Inspection:</strong>
-        <ul>
-            <li>Tighten all nuts and bolts</li>
-            <li>Check track alignment</li>
-            <li>Inspect roller condition</li>
-            <li>Verify spring integrity</li>
+            <li>Bottom seal integrity</li>
+            <li>Side weatherstripping</li>
+            <li>Top sealing system</li>
+            <li>Frame weatherization</li>
         </ul>
     </li>
 </ul>
 
-<h3>Winter-Specific Maintenance</h3>
+<h3>Professional Assessment Benefits</h3>
 <ul>
-    <li><strong>Lubrication:</strong>
-        <ul>
-            <li>Use cold-weather rated lubricant</li>
-            <li>Apply to all moving parts</li>
-            <li>Focus on springs and hinges</li>
-            <li>Clean and lubricate rollers</li>
-        </ul>
-    </li>
-    <li><strong>Preventive Measures:</strong>
-        <ul>
-            <li>Install a heating cable</li>
-            <li>Keep snow away from door</li>
-            <li>Remove ice buildup promptly</li>
-            <li>Maintain proper threshold clearance</li>
-        </ul>
-    </li>
-</ul>
-
-<div class="alert alert-info">
-<strong>Professional Tip:</strong> Consider scheduling a professional inspection before winter to ensure all components are in optimal condition for cold weather operation.
-</div>
-
-<h3>Emergency Winter Care</h3>
-<ul>
-    <li>Keep rubber seal conditioner handy</li>
-    <li>Have a backup power source ready</li>
-    <li>Know how to use manual release</li>
-    <li>Keep professional contact information accessible</li>
-</ul>
-
-<div class="alert alert-success">
-<strong>Benefits of Winter Maintenance:</strong>
-<ul>
-    <li>Prevents freezing and sticking</li>
-    <li>Reduces energy loss</li>
-    <li>Extends component lifespan</li>
-    <li>Ensures reliable operation</li>
-    <li>Avoids emergency repairs</li>
-</ul>
-</div>
-""",
-        "image_url": "https://placehold.co/600x400?text=Winter+Maintenance",
-        "created_at": "2024-11-18T10:00:00",
-        "updated_at": "2024-11-18T10:00:00"
-    },
-    {
-        "title": "Common Garage Door Problems and Solutions",
-        "slug": "common-problems-solutions",
-        "summary": "A comprehensive guide to identifying and addressing common garage door issues, with professional solutions and safety tips.",
-        "content": """
-<h2>Understanding Common Garage Door Issues</h2>
-
-<p>Being able to identify common garage door problems can help you understand when to attempt safe DIY solutions and when to call a professional.</p>
-
-<div class="alert alert-danger">
-<strong>Safety Warning:</strong> Never attempt to repair or adjust springs, cables, or other high-tension components. These repairs require professional expertise and specialized tools.
-</div>
-
-<h3>Common Problems and Solutions</h3>
-<ul>
-    <li><strong>Noisy Operation:</strong>
-        <ul>
-            <li>Cause: Worn rollers, loose hardware, or lack of lubrication</li>
-            <li>Solution: Inspect and tighten hardware, lubricate moving parts</li>
-            <li>When to call: If noise persists after basic maintenance</li>
-        </ul>
-    </li>
-    <li><strong>Door Won't Close Fully:</strong>
-        <ul>
-            <li>Cause: Misaligned sensors, track issues, or limit settings</li>
-            <li>Solution: Clean and align sensors, check for track obstructions</li>
-            <li>When to call: If alignment issues persist</li>
-        </ul>
-    </li>
-    <li><strong>Slow or Uneven Movement:</strong>
-        <ul>
-            <li>Cause: Spring issues, track problems, or opener malfunction</li>
-            <li>Solution: Professional inspection required</li>
-            <li>When to call: Immediately to prevent further damage</li>
-        </ul>
-    </li>
+    <li>Thermal imaging analysis</li>
+    <li>Air leak detection</li>
+    <li>Insulation evaluation</li>
+    <li>Seal compression testing</li>
 </ul>
 
 <div class="alert alert-warning">
-<strong>Important Note:</strong> If your door shows signs of spring or cable wear, contact a professional immediately. These components can cause serious injury if they fail.
+<strong>Important Note:</strong> Ensure that energy efficiency improvements don't compromise your door's operation or safety features. Professional installation is recommended for major upgrades.
 </div>
 
-<h3>Preventive Measures</h3>
+<h3>Maintenance Tips for Energy Efficiency</h3>
 <ul>
-    <li>Regular visual inspections</li>
-    <li>Monthly safety tests</li>
-    <li>Proper lubrication schedule</li>
-    <li>Prompt attention to minor issues</li>
-</ul>
-
-<div class="alert alert-info">
-<strong>Professional Tip:</strong> Keep a maintenance log to track when problems occur and what solutions were implemented. This history can help identify patterns and prevent future issues.
-</div>
-
-<h3>When to Call a Professional</h3>
-<ul>
-    <li>Any spring-related issues</li>
-    <li>Cable wear or damage</li>
-    <li>Door off track</li>
-    <li>Electrical problems</li>
-    <li>Structural damage</li>
+    <li><strong>Regular Checks:</strong>
+        <ul>
+            <li>Inspect weather stripping monthly</li>
+            <li>Test seal compression quarterly</li>
+            <li>Verify panel alignment</li>
+            <li>Check for air gaps</li>
+        </ul>
+    </li>
+    <li><strong>Seasonal Adjustments:</strong>
+        <ul>
+            <li>Update threshold seals</li>
+            <li>Adjust spring tension</li>
+            <li>Maintain proper alignment</li>
+            <li>Service weather seals</li>
+        </ul>
+    </li>
 </ul>
 
 <div class="alert alert-success">
-<strong>Remember:</strong> Regular maintenance can prevent many common problems and extend the life of your garage door system.
-</div>
-""",
-        "image_url": "https://placehold.co/600x400?text=Common+Problems",
-        "created_at": "2024-11-18T11:00:00",
-        "updated_at": "2024-11-18T11:00:00"
-    },
-    {
-        "title": "How to Extend Your Garage Door's Lifespan",
-        "slug": "extend-door-lifespan",
-        "summary": "Expert advice on maximizing your garage door's longevity through proper maintenance and care techniques.",
-        "content": """
-<h2>Maximizing Your Garage Door's Lifespan</h2>
-
-<p>With proper care and maintenance, a quality garage door can provide reliable service for many years. Follow these expert tips to extend your door's operational life.</p>
-
-<h3>Essential Maintenance Practices</h3>
+<strong>Energy Efficiency Benefits:</strong>
 <ul>
-    <li><strong>Regular Inspections:</strong>
-        <ul>
-            <li>Monthly visual checks</li>
-            <li>Quarterly hardware tightening</li>
-            <li>Seasonal balance testing</li>
-            <li>Annual professional service</li>
-        </ul>
-    </li>
-    <li><strong>Proper Lubrication:</strong>
-        <ul>
-            <li>Use appropriate lubricants</li>
-            <li>Focus on moving parts</li>
-            <li>Maintain regular schedule</li>
-            <li>Clean before lubricating</li>
-        </ul>
-    </li>
-</ul>
-
-<div class="alert alert-warning">
-<strong>Important:</strong> Never skip regular maintenance checks. Small issues can quickly develop into major problems if left unaddressed.
-</div>
-
-<h3>Component-Specific Care</h3>
-<ul>
-    <li><strong>Springs:</strong>
-        <ul>
-            <li>Regular tension checks</li>
-            <li>Watch for wear signs</li>
-            <li>Professional adjustments only</li>
-            <li>Preventive replacement</li>
-        </ul>
-    </li>
-    <li><strong>Cables:</strong>
-        <ul>
-            <li>Check for fraying</li>
-            <li>Maintain proper tension</li>
-            <li>Professional inspection</li>
-            <li>Timely replacement</li>
-        </ul>
-    </li>
-</ul>
-
-<div class="alert alert-info">
-<strong>Professional Tip:</strong> Keep detailed records of all maintenance activities and repairs. This information helps track component life cycles and plan preventive maintenance.
-</div>
-
-<h3>Best Practices for Longevity</h3>
-<ul>
-    <li>Operate door gently</li>
-    <li>Address issues promptly</li>
-    <li>Keep tracks clean</li>
-    <li>Maintain weather seals</li>
-    <li>Balance check quarterly</li>
-</ul>
-
-<div class="alert alert-success">
-<strong>Long-Term Benefits:</strong>
-<ul>
-    <li>Reduced repair costs</li>
-    <li>Improved safety</li>
-    <li>Better energy efficiency</li>
-    <li>Consistent operation</li>
+    <li>Lower utility costs</li>
+    <li>Improved comfort levels</li>
+    <li>Better temperature control</li>
     <li>Enhanced home value</li>
+    <li>Reduced environmental impact</li>
 </ul>
 </div>
 
-<div class="alert alert-danger">
-<strong>Safety Reminder:</strong> Always prioritize safety over convenience. If you notice any unusual operation, contact a professional rather than risking DIY repairs on complex components.
+<div class="alert alert-info">
+<strong>Professional Tip:</strong> Consider scheduling a professional energy efficiency assessment to identify specific improvements for your garage door system.
 </div>
 """,
-        "image_url": "https://placehold.co/600x400?text=Door+Longevity",
-        "created_at": "2024-11-18T12:00:00",
-        "updated_at": "2024-11-18T12:00:00"
+        "image_url": "https://placehold.co/600x400?text=Energy+Efficiency",
+        "created_at": "2024-11-19T10:00:00",
+        "updated_at": "2024-11-19T10:00:00"
     },
     {
-        "title": "Signs Your Garage Door Needs Professional Repair",
-        "slug": "professional-repair-signs",
-        "summary": "Learn to recognize the critical signs that indicate your garage door requires professional attention for safe and reliable operation.",
+        "title": "Understanding Different Types of Garage Door Springs",
+        "slug": "garage-door-springs-guide",
+        "summary": "A comprehensive guide to different garage door spring systems, their maintenance, and when to seek professional replacement.",
         "content": """
-<h2>Identifying Critical Repair Needs</h2>
+<h2>Types of Garage Door Springs Explained</h2>
 
-<p>Recognizing when your garage door needs professional attention is crucial for maintaining safety and preventing costly damage. Learn these important warning signs.</p>
+<p>Understanding your garage door's spring system is crucial for proper maintenance and safety. Different types of springs serve various purposes and require specific handling.</p>
 
 <div class="alert alert-danger">
-<strong>Safety Warning:</strong> If you notice any of these signs, stop using your garage door and contact a professional immediately to prevent accidents or further damage.
+<strong>Safety Warning:</strong> Never attempt to repair or adjust garage door springs yourself. These high-tension components can cause serious injury or death if mishandled. Always contact a certified professional for spring-related services.
 </div>
 
-<h3>Critical Warning Signs</h3>
+<h3>Common Spring Types</h3>
 <ul>
-    <li><strong>Unusual Sounds:</strong>
+    <li><strong>Torsion Springs:</strong>
         <ul>
-            <li>Grinding or squealing</li>
-            <li>Popping or banging</li>
-            <li>Straining motor sounds</li>
-            <li>Unusual vibrations</li>
+            <li>Mounted above the door</li>
+            <li>Longer lifespan</li>
+            <li>Smoother operation</li>
+            <li>Better balance control</li>
         </ul>
     </li>
-    <li><strong>Visual Indicators:</strong>
+    <li><strong>Extension Springs:</strong>
         <ul>
-            <li>Visible cable wear</li>
-            <li>Bent or damaged tracks</li>
-            <li>Cracked or broken springs</li>
-            <li>Misaligned door panels</li>
+            <li>Located along side tracks</li>
+            <li>Requires safety cables</li>
+            <li>Common in older systems</li>
+            <li>More visible wear patterns</li>
         </ul>
     </li>
 </ul>
 
-<h3>Operational Red Flags</h3>
+<h3>Spring System Specifications</h3>
 <ul>
-    <li><strong>Movement Issues:</strong>
+    <li><strong>Single Spring Systems:</strong>
         <ul>
-            <li>Slow or jerky operation</li>
-            <li>One-sided movement</li>
-            <li>Reversal problems</li>
-            <li>Complete failure to move</li>
+            <li>Cost-effective option</li>
+            <li>Suitable for lighter doors</li>
+            <li>Regular maintenance needed</li>
+            <li>Shorter service life</li>
         </ul>
     </li>
-    <li><strong>Balance Problems:</strong>
+    <li><strong>Double Spring Systems:</strong>
         <ul>
-            <li>Door drops when released</li>
-            <li>Uneven closing</li>
-            <li>Excessive force needed</li>
-            <li>Spring tension issues</li>
+            <li>Enhanced reliability</li>
+            <li>Better weight distribution</li>
+            <li>Longer operational life</li>
+            <li>Improved safety features</li>
         </ul>
     </li>
 </ul>
 
 <div class="alert alert-warning">
-<strong>Important:</strong> Continuing to operate a malfunctioning garage door can lead to serious injury and more extensive damage requiring costly repairs.
+<strong>Maintenance Note:</strong> Regular professional inspections are crucial for:
+<ul>
+    <li>Preventing unexpected failures</li>
+    <li>Ensuring safe operation</li>
+    <li>Extending system lifespan</li>
+    <li>Maintaining warranty coverage</li>
+</ul>
 </div>
 
-<h3>Safety System Issues</h3>
+<h3>When to Replace Springs</h3>
 <ul>
-    <li>Failed reverse mechanism</li>
-    <li>Misaligned safety sensors</li>
-    <li>Intermittent operation</li>
-    <li>Control system failures</li>
+    <li>Visible rust or corrosion</li>
+    <li>Gaps in spring coils</li>
+    <li>Door imbalance issues</li>
+    <li>Unusual operation sounds</li>
+    <li>Age-related wear</li>
 </ul>
 
 <div class="alert alert-info">
-<strong>Professional Assessment Benefits:</strong>
+<strong>Professional Insight:</strong> Quality spring systems, when properly maintained, typically last 10,000-15,000 cycles. Our comprehensive warranty coverage ensures peace of mind with every installation.
+</div>
+""",
+        "image_url": "https://placehold.co/600x400?text=Spring+Types",
+        "created_at": "2024-11-19T11:00:00",
+        "updated_at": "2024-11-19T11:00:00"
+    },
+    {
+        "title": "Garage Door Safety Features Explained",
+        "slug": "safety-features-guide",
+        "summary": "Learn about essential garage door safety features, their importance, and how to maintain them for optimal protection.",
+        "content": """
+<h2>Essential Safety Features for Your Garage Door</h2>
+
+<p>Modern garage doors incorporate multiple safety features to protect your family and property. Understanding and maintaining these features is crucial for safe operation.</p>
+
+<div class="alert alert-danger">
+<strong>Critical Safety Warning:</strong> Never disable or bypass safety features. If any safety component isn't working correctly, discontinue use and contact a professional immediately.
+</div>
+
+<h3>Primary Safety Components</h3>
 <ul>
-    <li>Comprehensive safety check</li>
-    <li>Expert problem diagnosis</li>
-    <li>Proper repair solutions</li>
-    <li>Preventive maintenance</li>
-    <li>Peace of mind</li>
+    <li><strong>Auto-Reverse Mechanism:</strong>
+        <ul>
+            <li>Contact reversal system</li>
+            <li>Photo eye sensors</li>
+            <li>Force detection</li>
+            <li>Emergency stop</li>
+        </ul>
+    </li>
+    <li><strong>Photo Eye Sensors:</strong>
+        <ul>
+            <li>Infrared beam system</li>
+            <li>Object detection</li>
+            <li>Automatic reversal</li>
+            <li>LED indicators</li>
+        </ul>
+    </li>
+</ul>
+
+<h3>Additional Safety Features</h3>
+<ul>
+    <li><strong>Manual Release:</strong>
+        <ul>
+            <li>Emergency disconnect</li>
+            <li>Power failure operation</li>
+            <li>Quick release handle</li>
+            <li>Safety instructions</li>
+        </ul>
+    </li>
+    <li><strong>Pinch Protection:</strong>
+        <ul>
+            <li>Section joint design</li>
+            <li>Finger guards</li>
+            <li>Safe-guard rollers</li>
+            <li>Track shields</li>
+        </ul>
+    </li>
+</ul>
+
+<div class="alert alert-warning">
+<strong>Monthly Safety Checks:</strong>
+<ul>
+    <li>Test auto-reverse feature</li>
+    <li>Clean photo eye sensors</li>
+    <li>Verify manual release</li>
+    <li>Check emergency stop</li>
 </ul>
 </div>
 
-<div class="alert alert-success">
-<strong>Remember:</strong> Professional repairs may seem costly initially, but they're an investment in your safety and your door's longevity. Our team provides comprehensive warranties and guaranteed workmanship.
+<h3>Professional Safety Services</h3>
+<ul>
+    <li>Comprehensive safety inspection</li>
+    <li>Sensor alignment and testing</li>
+    <li>Safety feature calibration</li>
+    <li>Component maintenance</li>
+</ul>
+
+<div class="alert alert-info">
+<strong>Safety Tip:</strong> Our professional maintenance service includes a complete safety system check to ensure all features are working correctly and meet current safety standards.
 </div>
 """,
-        "image_url": "https://placehold.co/600x400?text=Repair+Signs",
-        "created_at": "2024-11-18T13:00:00",
-        "updated_at": "2024-11-18T13:00:00"
+        "image_url": "https://placehold.co/600x400?text=Safety+Features",
+        "created_at": "2024-11-19T12:00:00",
+        "updated_at": "2024-11-19T12:00:00"
+    },
+    {
+        "title": "Choosing the Right Garage Door Opener",
+        "slug": "choosing-garage-opener",
+        "summary": "Expert guidance on selecting the perfect garage door opener for your needs, including features, power options, and smart technology considerations.",
+        "content": """
+<h2>Selecting Your Ideal Garage Door Opener</h2>
+
+<p>Choosing the right garage door opener is crucial for reliable, efficient operation. Understanding different types and features helps make an informed decision.</p>
+
+<h3>Popular Opener Types</h3>
+<ul>
+    <li><strong>Chain Drive:</strong>
+        <ul>
+            <li>Economical choice</li>
+            <li>Reliable operation</li>
+            <li>Sturdy construction</li>
+            <li>Long-term durability</li>
+        </ul>
+    </li>
+    <li><strong>Belt Drive:</strong>
+        <ul>
+            <li>Quieter operation</li>
+            <li>Smooth movement</li>
+            <li>Minimal maintenance</li>
+            <li>Premium choice</li>
+        </ul>
+    </li>
+</ul>
+
+<div class="alert alert-info">
+<strong>Professional Recommendation:</strong> We offer high-quality Chamberlain openers:
+<ul>
+    <li>B2405C (½hp): $650-$720 + tax - Perfect for standard residential doors</li>
+    <li>B4505TC (¾hp): $700-$780 + tax - Ideal for heavier doors and frequent use</li>
+</ul>
+</div>
+
+<h3>Key Features to Consider</h3>
+<ul>
+    <li><strong>Smart Technology:</strong>
+        <ul>
+            <li>WiFi connectivity</li>
+            <li>Smartphone control</li>
+            <li>Real-time monitoring</li>
+            <li>Security alerts</li>
+        </ul>
+    </li>
+    <li><strong>Safety Features:</strong>
+        <ul>
+            <li>Motion detection</li>
+            <li>Auto-reverse system</li>
+            <li>Battery backup</li>
+            <li>Emergency release</li>
+        </ul>
+    </li>
+</ul>
+
+<div class="alert alert-warning">
+<strong>Installation Note:</strong> Professional installation ensures:
+<ul>
+    <li>Proper mounting and alignment</li>
+    <li>Correct safety sensor placement</li>
+    <li>Optimal force settings</li>
+    <li>Warranty protection</li>
+</ul>
+</div>
+
+<h3>Power Considerations</h3>
+<ul>
+    <li><strong>½ HP Motors:</strong>
+        <ul>
+            <li>Standard residential use</li>
+            <li>Energy efficient</li>
+            <li>Cost-effective</li>
+            <li>Reliable performance</li>
+        </ul>
+    </li>
+    <li><strong>¾ HP Motors:</strong>
+        <ul>
+            <li>Heavy-duty applications</li>
+            <li>Enhanced durability</li>
+            <li>Faster operation</li>
+            <li>Extended lifespan</li>
+        </ul>
+    </li>
+</ul>
+
+<div class="alert alert-success">
+<strong>Installation Benefits:</strong>
+<ul>
+    <li>Professional setup and testing</li>
+    <li>1-year comprehensive warranty</li>
+    <li>Safety feature calibration</li>
+    <li>User operation training</li>
+    <li>Ongoing support</li>
+</ul>
+</div>
+""",
+        "image_url": "https://placehold.co/600x400?text=Opener+Guide",
+        "created_at": "2024-11-19T13:00:00",
+        "updated_at": "2024-11-19T13:00:00"
     }
 ]
 
