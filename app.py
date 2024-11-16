@@ -53,10 +53,15 @@ contact_file = data_dir / 'contact_inquiries.json'
 blog_file = data_dir / 'blog_posts.json'
 
 def load_blog_posts():
-    """Load blog posts from JSON file"""
+    """Load blog posts from JSON file and convert date strings to datetime objects"""
     if blog_file.exists():
         with open(blog_file, 'r') as f:
-            return json.load(f)
+            posts = json.load(f)
+            # Convert string dates to datetime objects
+            for post in posts:
+                post['created_at'] = datetime.fromisoformat(post['created_at'])
+                post['updated_at'] = datetime.fromisoformat(post['updated_at'])
+            return posts
     return []
 
 def sanitize_input(text):
