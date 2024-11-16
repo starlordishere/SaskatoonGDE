@@ -11,6 +11,7 @@ from flask_wtf.csrf import CSRFProtect
 import re
 import json
 from pathlib import Path
+from flask_socketio import SocketIO
 
 # Hey there! Let's set up logging to keep track of what's happening in our app
 logging.basicConfig(
@@ -23,6 +24,10 @@ app = Flask(__name__)
 
 # Let's configure our app with all the settings it needs
 app.config['SECRET_KEY'] = os.environ.get("FLASK_SECRET_KEY", "saskatoon-garage-experts")
+
+
+# Initialize Socket.IO
+socketio = SocketIO(app)
 
 # Email configuration - we're using Gmail SMTP for sending emails
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
@@ -245,7 +250,3 @@ Saskatoon Garage Door Experts Team
             return redirect(url_for('contact'))
             
     return render_template('contact.html')
-
-if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
