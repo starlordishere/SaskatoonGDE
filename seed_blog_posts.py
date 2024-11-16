@@ -11,282 +11,322 @@ blog_file = data_dir / 'blog_posts.json'
 # Our initial blog posts - great content for SEO and customer education!
 posts = [
     {
-        "title": "Understanding Garage Door Springs: A Complete Guide",
-        "slug": "garage-door-springs-guide",
-        "summary": "Learn everything about garage door springs, their importance, and when they need replacement.",
+        "title": "Regular Maintenance Schedule: Keep Your Garage Door in Top Shape",
+        "slug": "regular-maintenance-schedule",
+        "summary": "A comprehensive guide to maintaining your garage door throughout the year for optimal performance and longevity.",
         "content": """
-<h2>The Importance of Garage Door Springs</h2>
+<h2>Annual Garage Door Maintenance Schedule</h2>
 
-<p>Garage door springs are an essential component of your garage door system, responsible for safe and proper lifting and lowering of the door. Torsion springs, located above the garage door on a metal shaft, work by storing mechanical energy when the door is closed through twisting, and releasing this energy to help lift the door when opening.</p>
+<p>Regular maintenance is crucial for extending the life of your garage door and preventing costly repairs. Following a structured maintenance schedule helps ensure all components remain in optimal condition.</p>
 
-<div class="alert alert-danger">
-<strong>Safety Warning:</strong> Never attempt to fix garage door springs yourself. Due to the high tension in the springs, spring repairs should only be handled by professional technicians to avoid dangerous hazards. Springs have the most tension when the door is lowered.
-</div>
-
-<h3>Types of Spring Systems</h3>
+<h3>Monthly Maintenance Tasks</h3>
 <ul>
-    <li><strong>Torsion Springs:</strong> Located above the door, visible and easier to inspect</li>
-    <li><strong>Wayne Dalton System:</strong> Springs located inside a hollow tube, making inspection more difficult</li>
-</ul>
-
-<h3>Warning Signs for Replacement</h3>
-<p>Watch for these critical signs that indicate your springs need professional attention:</p>
-<ul>
-    <li>Door becomes unusually heavy and difficult to open manually</li>
-    <li>Door opens partially or very slowly</li>
-    <li>Door drops quickly when partially lifted</li>
-    <li>Springs show visible rust or corrosion</li>
-    <li>Loud bang sounds due to springs unwinding quickly</li>
-</ul>
-
-<h3>Factors Affecting Spring Lifespan</h3>
-<ul>
-    <li>Regular wear and tear</li>
-    <li>Rust and corrosion</li>
-    <li>Incorrect maintenance</li>
-    <li>Environmental conditions</li>
-</ul>
-
-<div class="alert alert-info">
-<strong>Professional Tip:</strong> Annual maintenance by trained professionals can help identify spring issues early and prevent costly repairs or accidents.
-</div>
-""",
-        "image_url": "https://placehold.co/600x400?text=Garage+Springs",
-        "created_at": "2024-11-15T10:00:00",
-        "updated_at": "2024-11-15T10:00:00"
-    },
-    {
-        "title": "Essential Guide to Garage Door Cables",
-        "slug": "garage-door-cables-guide",
-        "summary": "Understanding garage door cables, their importance, and common issues.",
-        "content": """
-<h2>Understanding Garage Door Cables</h2>
-
-<p>Garage door cables are crucial components made from strong, twisted steel wire for durability and strength. Working with cable drums on either side of the door, they maintain even tension, ensuring proper and safe operation of your garage door.</p>
-
-<h3>Critical Warning Signs</h3>
-<ul>
-    <li><strong>Fraying or Rust:</strong> Signs of wear that can lead to cable failure</li>
-    <li><strong>Slack in Cables:</strong> Causing door imbalance and improper operation</li>
-    <li><strong>Uneven Movement:</strong> Door shaking or moving too fast</li>
-    <li><strong>Misalignment:</strong> Door not opening or closing properly</li>
-</ul>
-
-<div class="alert alert-danger">
-<strong>Safety Warning:</strong> Cables are under high tension and can cause serious injury if not handled properly. Never attempt to replace or repair cables on your own - always contact professional technicians.
-</div>
-
-<h3>Importance of Timely Repairs</h3>
-<p>Damaged cables should be replaced immediately to:</p>
-<ul>
-    <li>Ensure family safety</li>
-    <li>Prevent further damage</li>
-    <li>Maintain proper door operation</li>
-    <li>Avoid costly emergency repairs</li>
-</ul>
-
-<div class="alert alert-info">
-<strong>Maintenance Tip:</strong> Regular professional inspections can identify cable issues before they become serious problems.
-</div>
-""",
-        "image_url": "https://placehold.co/600x400?text=Door+Cables",
-        "created_at": "2024-11-15T11:00:00",
-        "updated_at": "2024-11-15T11:00:00"
-    },
-    {
-        "title": "Garage Door Opener Maintenance and Troubleshooting",
-        "slug": "opener-maintenance-guide",
-        "summary": "Essential maintenance tips and common troubleshooting solutions for garage door openers.",
-        "content": """
-<h2>Maintaining Your Garage Door Opener</h2>
-
-<p>A well-maintained garage door opener ensures reliable operation and extends the lifespan of your system. Regular maintenance can prevent many common issues and keep your garage door operating smoothly.</p>
-
-<h3>Regular Maintenance Checklist</h3>
-<ul>
-    <li><strong>Monthly Checks:</strong>
+    <li><strong>Visual Inspection:</strong>
         <ul>
-            <li>Test the auto-reverse safety feature</li>
-            <li>Check and clean photo eye sensors</li>
-            <li>Listen for unusual noises during operation</li>
-            <li>Inspect the chain/belt tension</li>
+            <li>Check springs for rust or gaps</li>
+            <li>Inspect cables for fraying</li>
+            <li>Look for loose hardware</li>
+            <li>Verify proper door balance</li>
         </ul>
     </li>
-    <li><strong>Quarterly Maintenance:</strong>
+    <li><strong>Safety Tests:</strong>
         <ul>
-            <li>Lubricate chain or belt drive</li>
-            <li>Tighten all mounting hardware</li>
-            <li>Check rail alignment</li>
-            <li>Test battery backup (if equipped)</li>
+            <li>Test auto-reverse feature</li>
+            <li>Check photo eye sensors</li>
+            <li>Verify emergency release</li>
         </ul>
     </li>
 </ul>
 
 <div class="alert alert-warning">
-<strong>Important:</strong> If your opener is making grinding noises or operating inconsistently, schedule a professional inspection immediately to prevent potential failure.
+<strong>Important:</strong> If you notice any unusual sounds, movements, or visible wear during your inspections, contact a professional immediately to prevent potential safety hazards.
 </div>
 
-<h3>Common Issues and Solutions</h3>
+<h3>Quarterly Maintenance</h3>
 <ul>
-    <li><strong>Opener Won't Respond:</strong>
+    <li><strong>Lubrication:</strong>
         <ul>
-            <li>Check power supply and circuit breaker</li>
-            <li>Verify remote battery</li>
-            <li>Ensure photo eyes are aligned and clean</li>
-            <li>Check for frequency interference</li>
+            <li>Rollers and hinges</li>
+            <li>Chain/belt drive</li>
+            <li>Springs (if accessible)</li>
+            <li>Bearings and bushings</li>
+        </ul>
+    </li>
+    <li><strong>Hardware Check:</strong>
+        <ul>
+            <li>Tighten all brackets</li>
+            <li>Check roller alignment</li>
+            <li>Verify track mounting</li>
+            <li>Test door balance</li>
+        </ul>
+    </li>
+</ul>
+
+<div class="alert alert-info">
+<strong>Pro Tip:</strong> Use a silicone-based lubricant specifically designed for garage doors. Avoid using WD-40 or similar products as they can attract dust and debris.
+</div>
+
+<h3>Annual Professional Service</h3>
+<ul>
+    <li>Comprehensive spring inspection</li>
+    <li>Cable tension adjustment</li>
+    <li>Track alignment verification</li>
+    <li>Complete hardware tightening</li>
+    <li>Safety system testing</li>
+    <li>Weather seal inspection</li>
+</ul>
+
+<div class="alert alert-success">
+<strong>Maintenance Benefits:</strong>
+<ul>
+    <li>Extended door lifespan</li>
+    <li>Reduced repair costs</li>
+    <li>Improved safety</li>
+    <li>Better energy efficiency</li>
+    <li>Quieter operation</li>
+</ul>
+</div>
+""",
+        "image_url": "https://placehold.co/600x400?text=Maintenance+Schedule",
+        "created_at": "2024-11-17T10:00:00",
+        "updated_at": "2024-11-17T10:00:00"
+    },
+    {
+        "title": "DIY Garage Door Troubleshooting Guide",
+        "slug": "diy-troubleshooting-guide",
+        "summary": "Learn how to safely diagnose common garage door issues and know when to call a professional.",
+        "content": """
+<h2>Safe DIY Troubleshooting Steps</h2>
+
+<p>While many garage door repairs require professional attention, there are several safe troubleshooting steps you can take to identify issues before calling a technician.</p>
+
+<div class="alert alert-danger">
+<strong>Safety Warning:</strong> Never attempt to repair or adjust springs, cables, or other high-tension components. These repairs should only be performed by certified professionals to prevent serious injury or death.
+</div>
+
+<h3>Common Issues and Initial Checks</h3>
+<ul>
+    <li><strong>Door Won't Open or Close:</strong>
+        <ul>
+            <li>Check power supply and batteries</li>
+            <li>Verify remote control functionality</li>
+            <li>Inspect photo eye alignment</li>
+            <li>Look for obvious obstructions</li>
         </ul>
     </li>
     <li><strong>Noisy Operation:</strong>
         <ul>
-            <li>Inspect chain/belt tension</li>
+            <li>Listen for location of noise</li>
             <li>Check for loose hardware</li>
-            <li>Verify proper lubrication</li>
-            <li>Look for worn rollers or hinges</li>
+            <li>Inspect roller condition</li>
+            <li>Note timing and frequency</li>
         </ul>
     </li>
 </ul>
 
-<div class="alert alert-info">
-<strong>Professional Tip:</strong> Modern garage door openers like Chamberlain's B2405C and B4505TC models include WiFi capabilities and smartphone integration. Regular firmware updates help maintain security and functionality.
-</div>
-""",
-        "image_url": "https://placehold.co/600x400?text=Opener+Maintenance",
-        "created_at": "2024-11-16T10:00:00",
-        "updated_at": "2024-11-16T10:00:00"
-    },
-    {
-        "title": "Winter Garage Door Maintenance Guide",
-        "slug": "winter-maintenance-guide",
-        "summary": "Essential tips to keep your garage door operating smoothly during cold Saskatoon winters.",
-        "content": """
-<h2>Preparing Your Garage Door for Winter</h2>
-
-<p>Saskatoon's harsh winters can take a toll on your garage door system. Proper winterization and maintenance are crucial for reliable operation during cold months.</p>
-
-<h3>Winter Preparation Checklist</h3>
+<h3>Safe Visual Inspections</h3>
 <ul>
-    <li><strong>Weather Sealing:</strong>
+    <li><strong>From Outside:</strong>
         <ul>
-            <li>Inspect and replace worn weather stripping</li>
-            <li>Check bottom seal condition</li>
-            <li>Verify side and top seals</li>
-            <li>Look for gaps and drafts</li>
+            <li>Weather seal condition</li>
+            <li>Track alignment</li>
+            <li>Visible hardware</li>
+            <li>Panel damage</li>
         </ul>
     </li>
-    <li><strong>Lubrication:</strong>
+    <li><strong>From Inside:</strong>
         <ul>
-            <li>Use cold-weather rated lubricant</li>
-            <li>Apply to all moving parts</li>
-            <li>Clean old grease and debris</li>
-            <li>Focus on rollers and hinges</li>
+            <li>Spring appearance</li>
+            <li>Cable condition</li>
+            <li>Opener mounting</li>
+            <li>Safety sensor status</li>
         </ul>
     </li>
 </ul>
 
 <div class="alert alert-warning">
-<strong>Winter Warning:</strong> Never try to force open a frozen garage door. This can damage springs, cables, and other components. Instead, use a heat gun or similar device to carefully melt ice around seals.
+<strong>When to Call a Professional:</strong>
+<ul>
+    <li>Any spring or cable issues</li>
+    <li>Door off track</li>
+    <li>Significant panel damage</li>
+    <li>Electrical problems</li>
+    <li>Failed safety tests</li>
+</ul>
 </div>
 
-<h3>Common Winter Issues</h3>
+<div class="alert alert-info">
+<strong>Documentation Tip:</strong> Before calling a professional, document the issue with photos and notes about when the problem occurs. This can help with faster diagnosis and more accurate repair estimates.
+</div>
+""",
+        "image_url": "https://placehold.co/600x400?text=DIY+Troubleshooting",
+        "created_at": "2024-11-17T11:00:00",
+        "updated_at": "2024-11-17T11:00:00"
+    },
+    {
+        "title": "Improving Your Garage Door's Energy Efficiency",
+        "slug": "energy-efficiency-guide",
+        "summary": "Expert tips and solutions for maximizing your garage door's energy efficiency and reducing heating/cooling costs.",
+        "content": """
+<h2>Energy-Saving Solutions for Your Garage Door</h2>
+
+<p>An energy-efficient garage door can significantly impact your home's overall energy consumption, especially in Saskatoon's extreme weather conditions.</p>
+
+<h3>Key Areas for Improvement</h3>
 <ul>
-    <li><strong>Door Sticking:</strong>
+    <li><strong>Weather Sealing:</strong>
         <ul>
-            <li>Check for ice formation</li>
-            <li>Verify threshold seal condition</li>
-            <li>Inspect track alignment</li>
-            <li>Test spring tension</li>
+            <li>Bottom seal inspection and replacement</li>
+            <li>Side weather stripping assessment</li>
+            <li>Top seal verification</li>
+            <li>Frame weatherization</li>
         </ul>
     </li>
-    <li><strong>Opener Problems:</strong>
+    <li><strong>Insulation Solutions:</strong>
         <ul>
-            <li>Ensure proper lubrication</li>
-            <li>Check for condensation</li>
-            <li>Verify photo eye cleanliness</li>
-            <li>Test safety features</li>
+            <li>Panel insulation options</li>
+            <li>R-value considerations</li>
+            <li>Thermal break technology</li>
+            <li>Window efficiency upgrades</li>
         </ul>
     </li>
 </ul>
 
 <div class="alert alert-info">
-<strong>Pro Tip:</strong> Schedule a professional maintenance check before winter to ensure all components are ready for cold weather operation. This can prevent emergency repairs during extreme weather conditions.
+<strong>Energy Saving Tip:</strong> A properly insulated garage door can reduce energy loss by up to 71% and help maintain consistent temperatures in attached garages.
 </div>
-""",
-        "image_url": "https://placehold.co/600x400?text=Winter+Maintenance",
-        "created_at": "2024-11-16T11:00:00",
-        "updated_at": "2024-11-16T11:00:00"
-    },
-    {
-        "title": "Garage Door Safety Features and Testing",
-        "slug": "safety-features-guide",
-        "summary": "Understanding and maintaining crucial safety features of your garage door system.",
-        "content": """
-<h2>Essential Safety Features</h2>
 
-<p>Modern garage doors incorporate several safety features to prevent accidents and injuries. Regular testing and maintenance of these features is crucial for the safety of your family.</p>
-
-<h3>Key Safety Components</h3>
+<h3>Professional Assessment Benefits</h3>
 <ul>
-    <li><strong>Auto-Reverse Mechanism:</strong>
+    <li>Thermal imaging analysis</li>
+    <li>Air leak detection</li>
+    <li>Insulation recommendations</li>
+    <li>ROI calculations</li>
+</ul>
+
+<h3>Maintenance for Efficiency</h3>
+<ul>
+    <li><strong>Regular Checks:</strong>
         <ul>
-            <li>Prevents door from closing on obstacles</li>
-            <li>Required by law since 1993</li>
-            <li>Both mechanical and sensor-based systems</li>
-            <li>Monthly testing recommended</li>
+            <li>Seal compression testing</li>
+            <li>Weather stripping integrity</li>
+            <li>Hardware tightness</li>
+            <li>Panel alignment</li>
         </ul>
     </li>
-    <li><strong>Photo Eye Sensors:</strong>
+    <li><strong>Seasonal Adjustments:</strong>
         <ul>
-            <li>Detects objects in door's path</li>
-            <li>Located near floor level</li>
-            <li>Must be properly aligned</li>
-            <li>Requires regular cleaning</li>
+            <li>Weather seal conditioning</li>
+            <li>Threshold adjustment</li>
+            <li>Track alignment verification</li>
+            <li>Spring tension optimization</li>
+        </ul>
+    </li>
+</ul>
+
+<div class="alert alert-success">
+<strong>Benefits of Energy Efficiency:</strong>
+<ul>
+    <li>Lower heating/cooling costs</li>
+    <li>Improved comfort levels</li>
+    <li>Reduced environmental impact</li>
+    <li>Enhanced home value</li>
+    <li>Better temperature control</li>
+</ul>
+</div>
+
+<div class="alert alert-warning">
+<strong>Important Note:</strong> Always ensure that improving energy efficiency doesn't compromise the door's safety features or operational requirements.
+</div>
+""",
+        "image_url": "https://placehold.co/600x400?text=Energy+Efficiency",
+        "created_at": "2024-11-17T12:00:00",
+        "updated_at": "2024-11-17T12:00:00"
+    },
+    {
+        "title": "Enhanced Security Features for Your Garage Door",
+        "slug": "security-features-guide",
+        "summary": "Discover the latest security features and upgrades available for modern garage door systems.",
+        "content": """
+<h2>Modern Garage Door Security Features</h2>
+
+<p>With garage doors being a potential entry point for intruders, implementing proper security features is crucial for protecting your home and belongings.</p>
+
+<h3>Essential Security Components</h3>
+<ul>
+    <li><strong>Smart Technology:</strong>
+        <ul>
+            <li>WiFi-enabled controllers</li>
+            <li>Smartphone monitoring</li>
+            <li>Real-time alerts</li>
+            <li>Access logs</li>
+        </ul>
+    </li>
+    <li><strong>Physical Security:</strong>
+        <ul>
+            <li>Reinforced hardware</li>
+            <li>Anti-tampering devices</li>
+            <li>Manual locks</li>
+            <li>Security tracks</li>
         </ul>
     </li>
 </ul>
 
 <div class="alert alert-danger">
-<strong>Safety Warning:</strong> Never disable or bypass safety features. If any safety component isn't working correctly, contact a professional immediately for repairs.
+<strong>Security Warning:</strong> Never leave your garage door remote in your vehicle or use obvious access codes. Change your opener codes regularly and keep software updated to prevent unauthorized access.
 </div>
 
-<h3>Monthly Safety Tests</h3>
-<ol>
-    <li><strong>Auto-Reverse Test:</strong>
+<h3>Advanced Security Features</h3>
+<ul>
+    <li><strong>Smart Opener Systems:</strong>
         <ul>
-            <li>Place a 2x4 board flat on the ground</li>
-            <li>Close the door using remote</li>
-            <li>Door should reverse upon contact</li>
-            <li>If it doesn't, adjustment needed</li>
+            <li>Rolling code technology</li>
+            <li>Encryption protocols</li>
+            <li>Automatic closing</li>
+            <li>Camera integration</li>
         </ul>
     </li>
-    <li><strong>Photo Eye Test:</strong>
+    <li><strong>Monitoring Capabilities:</strong>
         <ul>
-            <li>Wave an object between sensors</li>
-            <li>Door should stop and reverse</li>
-            <li>Check sensor alignment</li>
-            <li>Clean lenses regularly</li>
+            <li>Status indicators</li>
+            <li>Motion detection</li>
+            <li>Video surveillance</li>
+            <li>Remote operation</li>
         </ul>
     </li>
-</ol>
+</ul>
 
 <div class="alert alert-info">
-<strong>Important Note:</strong> Modern openers like Chamberlain models include advanced safety features such as smartphone monitoring and automatic light activation. Keep your opener's firmware updated for the latest safety enhancements.
+<strong>Professional Tip:</strong> Modern Chamberlain openers include built-in security features like MyQ technology for enhanced monitoring and control. Regular firmware updates ensure your system stays protected against the latest security threats.
 </div>
 
-<h3>Emergency Release</h3>
+<h3>Security Best Practices</h3>
 <ul>
-    <li>Know how to use the emergency release rope</li>
-    <li>Only use when door is fully closed</li>
-    <li>Keep release cord at proper height</li>
-    <li>Test manual operation periodically</li>
+    <li>Regular code changes</li>
+    <li>Limited access sharing</li>
+    <li>Vacation mode usage</li>
+    <li>Emergency backup plans</li>
+    <li>Regular security audits</li>
 </ul>
 
 <div class="alert alert-warning">
-<strong>Maintenance Reminder:</strong> Schedule annual professional safety inspections to ensure all components are working correctly and meet current safety standards.
+<strong>Maintenance Note:</strong> Schedule regular security assessments to ensure all safety and security features are functioning correctly. This includes testing backup battery systems and verifying emergency release mechanisms.
+</div>
+
+<div class="alert alert-success">
+<strong>Security Benefits:</strong>
+<ul>
+    <li>Enhanced home protection</li>
+    <li>Remote monitoring capability</li>
+    <li>Improved access control</li>
+    <li>Peace of mind</li>
+    <li>Insurance benefits</li>
+</ul>
 </div>
 """,
-        "image_url": "https://placehold.co/600x400?text=Safety+Features",
-        "created_at": "2024-11-16T12:00:00",
-        "updated_at": "2024-11-16T12:00:00"
+        "image_url": "https://placehold.co/600x400?text=Security+Features",
+        "created_at": "2024-11-17T13:00:00",
+        "updated_at": "2024-11-17T13:00:00"
     }
 ]
 
